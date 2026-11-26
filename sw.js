@@ -1,0 +1,11 @@
+const CACHE_NAME="relashon-187-v25",STATIC_ASSETS=["./","./index.html","./app.js","./manifest.json","./icon-192.png","./icon-512.png"],ICON_URL="./icon-192.png";self.addEventListener("install",(event=>{self.skipWaiting(),
+event.waitUntil(caches.open(CACHE_NAME).then((cache=>Promise.all(STATIC_ASSETS.map((asset=>cache.add(asset).catch((err=>console.warn("PWA precache skip:",asset,err)))))))))})),self.addEventListener("activate",(event=>{
+event.waitUntil(caches.keys().then((keys=>Promise.all(keys.filter((k=>k!==CACHE_NAME)).map((k=>caches.delete(k)))))).then((()=>self.clients.claim())))})),self.addEventListener("fetch",(event=>{const req=event.request
+;if("GET"!==req.method)return;new URL(req.url).origin===self.location.origin&&event.respondWith(fetch(req).then((res=>{if(res&&200===res.status&&"basic"===res.type){const copy=res.clone()
+;caches.open(CACHE_NAME).then((cache=>cache.put(req,copy))).catch((()=>{}))}return res
+})).catch((()=>caches.match(req).then((cached=>cached||("navigate"===req.mode?caches.match("./index.html").then((page=>page||caches.match("./"))):new Response("",{status:504,statusText:"Offline"})))))))})),
+self.addEventListener("push",(event=>{let data={};if(event.data)try{data=event.data.json()}catch(e){data={title:"רלש״ון 187",body:event.data.text()}}const title=data.title||"רלש״ון 187 • התראה חדשה",options={
+body:data.body||"עדכון חדש ממערכת לשכת חטיבה 187",icon:ICON_URL,badge:ICON_URL,vibrate:[200,100,200,100,200],data:data.data||{url:"./index.html"},tag:data.tag||"relashon-notification",renotify:!0,dir:"rtl",lang:"he"}
+;event.waitUntil(self.registration.showNotification(title,options))})),self.addEventListener("notificationclick",(event=>{event.notification.close();const urlToOpen=event.notification.data&&event.notification.data.url||"./index.html"
+;event.waitUntil(clients.matchAll({type:"window",includeUncontrolled:!0}).then((clientList=>{for(const client of clientList)if("focus"in client)return client.focus();if(clients.openWindow)return clients.openWindow(urlToOpen)})))})),
+self.addEventListener("message",(event=>{event.data&&"SKIP_WAITING"===event.data.type&&self.skipWaiting()}));

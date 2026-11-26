@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta name="description" content="רלש״ון 187 – מערכת לשכה ופיקוד אחודה • חטיבת יהונתן 187 • ניהול לו״ז חטיבתי, אישורי הגעה (RSVP), מעקב משימות לשכה ואלפון מפקדים.">
+<meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="רלש״ון 187">
+<meta name="theme-color" content="#0f172a">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="manifest" href="./manifest.json">
+<title>רלש״ון - חטיבת יהונתן 187 | מערכת לשכה אחודה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Heebo:wght@300;400;500;600;700;800;900&display=swap">
+<script>
+window.__applyTailwindConfig = function() {
+if (typeof tailwind !== 'undefined') {
+tailwind.config = {
+darkMode: 'class',
+theme: {
+extend: {
+fontFamily: {
+sans: ['Heebo', 'sans-serif'],
+},
+colors: {
+brand: {
+50: '#f0fdf4',
+100: '#dcfce7',
+500: '#22c55e',
+600: '#16a34a',
+700: '#15803d',
+800: '#166534',
+900: '#14532d',
+}
+}
+}
+}
+};
+}
+};
+</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>if(typeof window.__applyTailwindConfig==="function")window.__applyTailwindConfig();</script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer onload="if(typeof safeLucide==='function')safeLucide()"></script>
+<style>
+.hidden,[hidden],[id*="Modal"].hidden,[id*="Screen"].hidden,[id*="Drawer"].hidden,[id*="Banner"].hidden,[id^="tabContent"].hidden{display:none !important;}
+@media (min-width:640px){.hidden.sm\:flex{display:flex !important;}
+.hidden.sm\:inline-flex{display:inline-flex !important;}
+.hidden.sm\:block{display:block !important;}
+}
+@media (min-width:768px){.hidden.md\:flex{display:flex !important;}
+.hidden.md\:block{display:block !important;}
+}
+@media (min-width:1024px){.hidden.lg\:flex{display:flex !important;}
+.hidden.lg\:block{display:block !important;}
+}
+@media (min-width:1280px){.hidden.xl\:flex{display:flex !important;}
+}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+body{font-family:'Assistant','Heebo',sans-serif;letter-spacing:-0.01em;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+h1,h2,h3,h4,.font-heading{font-family:'Heebo',sans-serif;}
+main,.overflow-y-auto,.overflow-x-auto,.custom-scrollbar{-webkit-overflow-scrolling:touch;}
+button,a,input,select,textarea,.btn-press,[role="button"],[onclick]{touch-action:manipulation;cursor:pointer;-webkit-tap-highlight-color:rgba(16,185,129,0.2);}
+.ambient-bg{position:fixed;inset:0;z-index:-10;overflow:hidden;pointer-events:none;}
+.grid-overlay-light{background-size:32px 32px;background-image:linear-gradient(to right,rgba(148,163,184,0.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(148,163,184,0.05) 1px,transparent 1px);}
+.grid-overlay-dark,.dark .grid-overlay-dark{background-size:32px 32px;background-image:linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);}
+.bg-mesh-light{background-color:#f8fafc;background-image:radial-gradient(at 0% 0%,rgba(16,185,129,0.08) 0px,transparent 50%),radial-gradient(at 100% 0%,rgba(59,130,246,0.06) 0px,transparent 50%),radial-gradient(at 50% 100%,rgba(139,92,246,0.05) 0px,transparent 50%);}
+.bg-mesh-dark,.dark body{background-color:#070b12 !important;background-image:radial-gradient(at 0% 0%,rgba(16,185,129,0.16) 0px,transparent 45%),radial-gradient(at 100% 0%,rgba(99,102,241,0.15) 0px,transparent 45%),radial-gradient(at 50% 100%,rgba(168,85,247,0.12) 0px,transparent 45%),radial-gradient(at 100% 100%,rgba(245,158,11,0.08) 0px,transparent 40%) !important;}
+.orb-1{position:absolute;top:-10%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(16,185,129,0.12) 0%,transparent 70%);pointer-events:none;}
+.dark .orb-1{background:radial-gradient(circle,rgba(16,185,129,0.16) 0%,transparent 70%);}
+.orb-2{position:absolute;bottom:10%;left:-8%;width:550px;height:550px;background:radial-gradient(circle,rgba(99,102,241,0.10) 0%,transparent 70%);pointer-events:none;}
+.dark .orb-2{background:radial-gradient(circle,rgba(79,70,229,0.14) 0%,transparent 70%);}
+.orb-3{position:absolute;top:45%;right:25%;width:400px;height:400px;background:radial-gradient(circle,rgba(245,158,11,0.08) 0%,transparent 70%);pointer-events:none;}
+.dark .orb-3{background:radial-gradient(circle,rgba(245,158,11,0.10) 0%,transparent 70%);}
+@keyframes tabFadeSlide{0%{opacity:0;transform:translateY(12px) scale(0.995);}
+100%{opacity:1;transform:translateY(0) scale(1);}
+}
+.tab-entering{animation:tabFadeSlide 0.24s cubic-bezier(0.16,1,0.3,1) forwards;}
+@keyframes modalBackdropFadeIn{0%{opacity:0;}
+100%{opacity:1;}
+}
+@keyframes modalContentPopIn{0%{opacity:0;transform:scale(0.94) translateY(12px);}
+100%{opacity:1;transform:scale(1) translateY(0);}
+}
+@keyframes modalSheetSlideUp{0%{opacity:0;transform:translateY(100%);}
+100%{opacity:1;transform:translateY(0);}
+}
+.fixed.z-50:not(.hidden){animation:modalBackdropFadeIn 0.2s ease-out forwards;}
+.fixed.z-50:not(.hidden) > div{animation:modalContentPopIn 0.26s cubic-bezier(0.16,1,0.3,1) forwards;}
+@keyframes emblemPulse{0%,100%{opacity:0.92;transform:scale(1);}
+50%{opacity:1;transform:scale(1.02);}
+}
+.emblem-pulse-box{animation:emblemPulse 4s ease-in-out infinite;}
+.card-luxury{transition:transform 0.18s ease;}
+.card-luxury:hover{transform:translateY(-2px);box-shadow:0 15px 35px -10px rgba(0,0,0,0.08);border-color:rgba(16,185,129,0.35);}
+.dark .card-luxury:hover{transform:translateY(-2px);border-color:rgba(99,102,241,0.5) !important;box-shadow:0 16px 45px -8px rgba(0,0,0,0.85),0 0 30px 4px rgba(99,102,241,0.3) !important;}
+.btn-press{transition:transform 0.1s ease;}
+.btn-press:active{transform:scale(0.96);}
+#toast{transition:transform 0.35s cubic-bezier(0.16,1,0.3,1),opacity 0.3s ease;}
+.emblem-glow{box-shadow:0 0 25px -3px rgba(16,185,129,0.35);}
+.dark .emblem-glow{box-shadow:0 0 30px -2px rgba(16,185,129,0.45);}
+input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 3px rgba(16,185,129,0.25);border-color:#10b981 !important;}
+.dark input:focus,.dark textarea:focus,.dark select:focus{outline:none !important;box-shadow:0 0 0 3px rgba(16,185,129,0.4),0 0 25px 3px rgba(16,185,129,0.35) !important;border-color:#34d399 !important;}
+.custom-scrollbar::-webkit-scrollbar{width:6px;height:6px;}
+.custom-scrollbar::-webkit-scrollbar-track{background:transparent;}
+.custom-scrollbar::-webkit-scrollbar-thumb{background:rgba(148,163,184,0.4);border-radius:9999px;}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb{background:rgba(71,85,105,0.5);}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover{background:rgba(16,185,129,0.6);}
+.no-scrollbar::-webkit-scrollbar{display:none;}
+.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none;}
+.pb-safe{padding-bottom:max(0.5rem,env(safe-area-inset-bottom,12px));}
+.rsvp-halo-accepted,.rsvp-halo-pending,.rsvp-halo-declined,.rsvp-halo-neutral{position:relative;transition:transform 0.22s ease;}
+.rsvp-halo-accepted{box-shadow:0 0 15px 1px rgba(16,185,129,0.22),0 2px 8px -2px rgba(0,0,0,0.05);}
+.dark .rsvp-halo-accepted{box-shadow:0 0 20px 3px rgba(16,185,129,0.30),0 2px 8px -2px rgba(0,0,0,0.4);}
+.rsvp-halo-pending{box-shadow:0 0 15px 1px rgba(245,158,11,0.22),0 2px 8px -2px rgba(0,0,0,0.05);}
+.dark .rsvp-halo-pending{box-shadow:0 0 20px 3px rgba(245,158,11,0.30),0 2px 8px -2px rgba(0,0,0,0.4);}
+.rsvp-halo-declined{box-shadow:0 0 15px 1px rgba(244,63,94,0.22),0 2px 8px -2px rgba(0,0,0,0.05);}
+.dark .rsvp-halo-declined{box-shadow:0 0 20px 3px rgba(244,63,94,0.30),0 2px 8px -2px rgba(0,0,0,0.4);}
+.rsvp-halo-accepted::before,.rsvp-halo-pending::before,.rsvp-halo-declined::before,.rsvp-halo-neutral::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity 0.25s ease;z-index:1;}
+.rsvp-halo-accepted::before{background:radial-gradient(circle at 50% 15%,rgba(16,185,129,0.18),transparent 75%);}
+.rsvp-halo-accepted:hover{border-color:#10b981 !important;box-shadow:0 0 35px 5px rgba(16,185,129,0.45),0 0 14px 2px rgba(16,185,129,0.30),0 12px 25px -4px rgba(0,0,0,0.12) !important;outline:2px solid rgba(16,185,129,0.6);outline-offset:2px;transform:translateY(-2px) scale(1.012);}
+.dark .rsvp-halo-accepted:hover{border-color:#34d399 !important;box-shadow:0 0 40px 6px rgba(16,185,129,0.55),0 0 16px 3px rgba(52,211,153,0.40),0 15px 30px -5px rgba(0,0,0,0.6) !important;outline:2px solid rgba(52,211,153,0.7);}
+.rsvp-halo-pending::before{background:radial-gradient(circle at 50% 15%,rgba(245,158,11,0.18),transparent 75%);}
+.rsvp-halo-pending:hover{border-color:#f59e0b !important;box-shadow:0 0 35px 5px rgba(245,158,11,0.45),0 0 14px 2px rgba(245,158,11,0.30),0 12px 25px -4px rgba(0,0,0,0.12) !important;outline:2px solid rgba(245,158,11,0.6);outline-offset:2px;transform:translateY(-2px) scale(1.012);}
+.dark .rsvp-halo-pending:hover{border-color:#fbbf24 !important;box-shadow:0 0 40px 6px rgba(245,158,11,0.55),0 0 16px 3px rgba(251,191,36,0.40),0 15px 30px -5px rgba(0,0,0,0.6) !important;outline:2px solid rgba(251,191,36,0.7);}
+.rsvp-halo-declined::before{background:radial-gradient(circle at 50% 15%,rgba(244,63,94,0.18),transparent 75%);}
+.rsvp-halo-declined:hover{border-color:#f43f5e !important;box-shadow:0 0 35px 5px rgba(244,63,94,0.45),0 0 14px 2px rgba(244,63,94,0.30),0 12px 25px -4px rgba(0,0,0,0.12) !important;outline:2px solid rgba(244,63,94,0.6);outline-offset:2px;transform:translateY(-2px) scale(1.012);}
+.dark .rsvp-halo-declined:hover{border-color:#fb7185 !important;box-shadow:0 0 40px 6px rgba(244,63,94,0.55),0 0 16px 3px rgba(251,113,133,0.40),0 15px 30px -5px rgba(0,0,0,0.6) !important;outline:2px solid rgba(251,113,133,0.7);}
+.rsvp-halo-neutral::before{background:radial-gradient(circle at 50% 15%,rgba(99,102,241,0.18),transparent 75%);}
+.rsvp-halo-neutral:hover{border-color:#6366f1 !important;box-shadow:0 0 35px 5px rgba(99,102,241,0.40),0 0 14px 2px rgba(99,102,241,0.25),0 12px 25px -4px rgba(0,0,0,0.12) !important;outline:2px solid rgba(99,102,241,0.55);outline-offset:2px;transform:translateY(-2px) scale(1.012);}
+.dark .rsvp-halo-neutral:hover{border-color:#818cf8 !important;box-shadow:0 0 40px 6px rgba(99,102,241,0.50),0 0 16px 3px rgba(129,140,248,0.35),0 15px 30px -5px rgba(0,0,0,0.6) !important;outline:2px solid rgba(129,140,248,0.65);}
+.rsvp-halo-accepted:hover::before,.rsvp-halo-pending:hover::before,.rsvp-halo-declined:hover::before,.rsvp-halo-neutral:hover::before{opacity:1;}
+.task-halo-urgent,.task-halo-high,.task-halo-normal,.task-halo-completed{position:relative;transition:transform 0.22s ease;}
+.task-halo-urgent::before,.task-halo-high::before,.task-halo-normal::before,.task-halo-completed::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity 0.25s ease;z-index:1;}
+.task-halo-urgent::before{background:radial-gradient(circle at 50% 15%,rgba(244,63,94,0.22),transparent 75%);}
+.task-halo-urgent{box-shadow:0 0 15px 1px rgba(244,63,94,0.20),0 2px 8px -2px rgba(0,0,0,0.05);}
+.task-halo-urgent:hover{border-color:#f43f5e !important;box-shadow:0 0 35px 6px rgba(244,63,94,0.50),0 0 16px 3px rgba(244,63,94,0.35),0 12px 25px -4px rgba(0,0,0,0.15) !important;outline:2px solid rgba(244,63,94,0.65);outline-offset:2px;transform:translateY(-2px) scale(1.015);}
+.dark .task-halo-urgent{box-shadow:0 0 20px 3px rgba(244,63,94,0.28),0 2px 8px -2px rgba(0,0,0,0.4);}
+.dark .task-halo-urgent:hover{border-color:#fb7185 !important;box-shadow:0 0 40px 7px rgba(244,63,94,0.60),0 0 18px 4px rgba(251,113,133,0.45),0 15px 30px -5px rgba(0,0,0,0.6) !important;outline:2px solid rgba(251,113,133,0.75);}
+.task-halo-high::before{background:radial-gradient(circle at 50% 15%,rgba(245,158,11,0.22),transparent 75%);}
+.task-halo-high{box-shadow:0 0 15px 1px rgba(245,158,11,0.20),0 2px 8px -2px rgba(0,0,0,0.05);}
+.task-halo-high:hover{border-color:#f59e0b !important;box-shadow:0 0 35px 6px rgba(245,158,11,0.50),0 0 16px 3px rgba(245,158,11,0.35),0 12px 25px -4px rgba(0,0,0,0.15) !important;outline:2px solid rgba(245,158,11,0.65);outline-offset:2px;transform:translateY(-2px) scale(1.015);}
+.dark .task-halo-high{box-shadow:0 0 20px 3px rgba(245,158,11,0.28),0 2px 8px -2px rgba(0,0,0,0.4);}
+.dark .task-halo-high:hover{border-color:#fbbf24 !important;box-shadow:0 0 40px 7px rgba(245,158,11,0.60),0 0 18px 4px rgba(251,191,36,0.45),0 15px 30px -5px rgba(0,0,0,0.6) !important;outline:2px solid rgba(251,191,36,0.75);}
+.task-halo-normal::before{background:radial-gradient(circle at 50% 15%,rgba(16,185,129,0.20),transparent 75%);}
+.task-halo-normal{box-shadow:0 0 12px 1px rgba(16,185,129,0.16),0 2px 8px -2px rgba(0,0,0,0.05);}
+.task-halo-normal:hover{border-color:#10b981 !important;box-shadow:0 0 35px 5px rgba(16,185,129,0.45),0 0 14px 2px rgba(16,185,129,0.30),0 12px 25px -4px rgba(0,0,0,0.12) !important;outline:2px solid rgba(16,185,129,0.60);outline-offset:2px;transform:translateY(-2px) scale(1.015);}
+.dark .task-halo-normal{box-shadow:0 0 16px 2px rgba(16,185,129,0.22),0 2px 8px -2px rgba(0,0,0,0.4);}
+.dark .task-halo-normal:hover{border-color:#34d399 !important;box-shadow:0 0 40px 6px rgba(16,185,129,0.55),0 0 16px 3px rgba(52,211,153,0.40),0 15px 30px -5px rgba(0,0,0,0.6) !important;outline:2px solid rgba(52,211,153,0.70);}
+.task-halo-completed::before{background:radial-gradient(circle at 50% 15%,rgba(148,163,184,0.15),transparent 75%);}
+.task-halo-completed:hover{border-color:#94a3b8 !important;box-shadow:0 0 25px 3px rgba(148,163,184,0.35),0 8px 20px -3px rgba(0,0,0,0.1) !important;transform:translateY(-1px) scale(1.01);}
+.task-halo-urgent:hover::before,.task-halo-high:hover::before,.task-halo-normal:hover::before,.task-halo-completed:hover::before{opacity:1;}
+.dark .whatsapp-chat-bubble,.dark [id$="PreviewBox"],.dark [id^="tpl"][id$="Preview"],.dark [id^="intMsg"]{background:linear-gradient(135deg,rgba(0,92,75,0.96) 0%,rgba(0,68,55,0.96) 100%) !important;color:#e9edef !important;border:1px solid rgba(52,211,153,0.5) !important;box-shadow:0 0 28px -2px rgba(16,185,129,0.45),0 4px 16px -2px rgba(0,0,0,0.65),inset 0 0 14px rgba(52,211,153,0.2) !important;text-shadow:0 1px 2px rgba(0,0,0,0.4);transition:transform 0.2s ease !important;}
+.dark .whatsapp-chat-bubble:hover,.dark [id$="PreviewBox"]:hover,.dark [id^="tpl"][id$="Preview"]:hover,.dark [id^="intMsg"]:hover{border-color:rgba(52,211,153,0.8) !important;box-shadow:0 0 42px 6px rgba(16,185,129,0.65),0 6px 22px -2px rgba(0,0,0,0.75),inset 0 0 20px rgba(52,211,153,0.3) !important;transform:translateY(-1px);}
+.dark .border-emerald-500\/30,.dark .border-emerald-500\/20,.dark [class*="border-emerald-500"]{box-shadow:0 0 35px -5px rgba(16,185,129,0.3),0 20px 45px -10px rgba(0,0,0,0.85) !important;}
+.dark .border-t-emerald-500,.dark .border-t-emerald-600{box-shadow:0 0 32px -4px rgba(16,185,129,0.38),0 12px 35px -8px rgba(0,0,0,0.75) !important;border-color:rgba(16,185,129,0.35) !important;}
+.dark .border-t-emerald-500:hover,.dark .border-t-emerald-600:hover{box-shadow:0 0 50px 4px rgba(16,185,129,0.6),0 16px 45px -8px rgba(0,0,0,0.9) !important;border-color:rgba(52,211,153,0.65) !important;}
+.dark .border-t-purple-500,.dark .border-t-purple-600,.dark .template-card{box-shadow:0 0 32px -4px rgba(168,85,247,0.38),0 12px 35px -8px rgba(0,0,0,0.75) !important;border-color:rgba(168,85,247,0.35) !important;}
+.dark .border-t-purple-500:hover,.dark .border-t-purple-600:hover,.dark .template-card:hover{box-shadow:0 0 50px 4px rgba(168,85,247,0.6),0 16px 45px -8px rgba(0,0,0,0.9) !important;border-color:rgba(192,132,252,0.65) !important;}
+.dark .border-t-blue-500,.dark .border-t-blue-600,.dark .border-t-indigo-500{box-shadow:0 0 32px -4px rgba(59,130,246,0.38),0 12px 35px -8px rgba(0,0,0,0.75) !important;border-color:rgba(59,130,246,0.35) !important;}
+.dark .border-t-blue-500:hover,.dark .border-t-blue-600:hover,.dark .border-t-indigo-500:hover{box-shadow:0 0 50px 4px rgba(59,130,246,0.6),0 16px 45px -8px rgba(0,0,0,0.9) !important;border-color:rgba(96,165,250,0.65) !important;}
+.dark .border-t-amber-500,.dark .border-t-amber-600,.dark .border-t-orange-500{box-shadow:0 0 32px -4px rgba(245,158,11,0.38),0 12px 35px -8px rgba(0,0,0,0.75) !important;border-color:rgba(245,158,11,0.35) !important;}
+.dark .border-t-amber-500:hover,.dark .border-t-amber-600:hover,.dark .border-t-orange-500:hover{box-shadow:0 0 50px 4px rgba(245,158,11,0.6),0 16px 45px -8px rgba(0,0,0,0.9) !important;border-color:rgba(251,191,36,0.65) !important;}
+.dark .border-t-cyan-500,.dark .border-t-cyan-600,.dark .border-t-teal-500{box-shadow:0 0 32px -4px rgba(6,182,212,0.38),0 12px 35px -8px rgba(0,0,0,0.75) !important;border-color:rgba(6,182,212,0.35) !important;}
+.dark .border-t-cyan-500:hover,.dark .border-t-cyan-600:hover,.dark .border-t-teal-500:hover{box-shadow:0 0 50px 4px rgba(6,182,212,0.6),0 16px 45px -8px rgba(0,0,0,0.9) !important;border-color:rgba(34,211,238,0.65) !important;}
+.dark #statCalEventsCount,.dark #statRsvpPendingCount,.dark #statUrgentTasksBadge,.dark #statPendingTasks,.dark #statContactsCount{text-shadow:0 0 16px currentColor,0 0 32px currentColor !important;}
+.dark .stat-icon-glow,.dark .w-9.h-9.rounded-2xl,.dark .w-10.h-10.rounded-2xl,.dark .w-11.h-11.rounded-2xl,.dark .w-12.h-12.rounded-2xl{box-shadow:0 0 20px 2px currentColor !important;}
+.dark .bg-emerald-950,.dark .bg-emerald-950\/80,.dark .bg-emerald-950\/40{box-shadow:0 0 14px 2px rgba(16,185,129,0.35) !important;border-color:rgba(16,185,129,0.6) !important;}
+.dark .bg-purple-950,.dark .bg-purple-950\/80,.dark .bg-purple-950\/40{box-shadow:0 0 14px 2px rgba(168,85,247,0.35) !important;border-color:rgba(168,85,247,0.6) !important;}
+.dark .bg-blue-950,.dark .bg-blue-950\/80,.dark .bg-blue-950\/40{box-shadow:0 0 14px 2px rgba(59,130,246,0.35) !important;border-color:rgba(59,130,246,0.6) !important;}
+.dark .bg-amber-950,.dark .bg-amber-950\/80,.dark .bg-amber-950\/40{box-shadow:0 0 14px 2px rgba(245,158,11,0.35) !important;border-color:rgba(245,158,11,0.6) !important;}
+.dark .bg-rose-950,.dark .bg-rose-950\/80,.dark .bg-rose-950\/40{box-shadow:0 0 14px 2px rgba(244,63,94,0.35) !important;border-color:rgba(244,63,94,0.6) !important;}
+.dark .bg-cyan-950,.dark .bg-cyan-950\/80,.dark .bg-cyan-950\/40{box-shadow:0 0 14px 2px rgba(6,182,212,0.35) !important;border-color:rgba(6,182,212,0.6) !important;}
+.dark .preset-btn[class*="bg-purple-600"],.dark .preset-btn[class*="bg-emerald-600"],.dark .preset-btn[class*="bg-blue-600"],.dark .preset-btn[class*="bg-amber-600"],.dark button[class*="bg-purple-600"],.dark button[class*="bg-emerald-600"]{box-shadow:0 0 22px 3px currentColor,inset 0 0 8px rgba(255,255,255,0.25) !important;}
+.dark button.rounded-xl:hover:not([disabled]),.dark button.rounded-2xl:hover:not([disabled]){box-shadow:0 0 18px 2px rgba(99,102,241,0.35);}
+.dark #navTabsContainer button.bg-slate-900,.dark #navTabsContainer button.bg-white,.dark #navTabsContainer button[class*="text-emerald-"],.dark #navTabsContainer button[class*="border-emerald-"]{box-shadow:0 0 24px 3px rgba(16,185,129,0.5),inset 0 0 10px rgba(52,211,153,0.2) !important;border:1px solid rgba(52,211,153,0.6) !important;}
+.dark .fixed.z-50:not(.hidden) > div{background:rgba(15,23,42,0.95) !important;backdrop-filter:blur(32px) !important;-webkit-backdrop-filter:blur(32px) !important;box-shadow:0 0 60px 8px rgba(16,185,129,0.3),0 25px 70px -15px rgba(0,0,0,0.95) !important;border:1px solid rgba(52,211,153,0.45) !important;}
+.dark #toast{background:rgba(15,23,42,0.95) !important;backdrop-filter:blur(8px) !important;-webkit-backdrop-filter:blur(8px) !important;box-shadow:0 0 35px 6px rgba(16,185,129,0.5),0 20px 45px -10px rgba(0,0,0,0.9) !important;border:1px solid rgba(52,211,153,0.6) !important;}
+.dark .contact-card{box-shadow:0 6px 22px -4px rgba(0,0,0,0.6),0 0 18px -2px rgba(16,185,129,0.2) !important;border:1px solid rgba(71,85,105,0.6) !important;transition:transform 0.2s ease !important;}
+.dark .contact-card:hover{box-shadow:0 12px 38px -6px rgba(0,0,0,0.85),0 0 32px 5px rgba(16,185,129,0.5) !important;border-color:rgba(52,211,153,0.7) !important;transform:translateY(-2.5px) scale(1.008);}
+#mobileBottomNav{position:fixed !important;bottom:0 !important;left:0 !important;right:0 !important;z-index:100 !important;display:flex !important;background-color:rgba(255,255,255,0.98) !important;backdrop-filter:blur(20px) !important;-webkit-backdrop-filter:blur(20px) !important;border-top:1px solid rgba(226,232,240,0.95) !important;padding-bottom:max(10px,env(safe-area-inset-bottom,10px)) !important;box-shadow:0 -4px 25px rgba(0,0,0,0.12) !important;}
+.dark #mobileBottomNav{background-color:rgba(15,23,42,0.98) !important;border-top:1px solid rgba(52,211,153,0.35) !important;box-shadow:0 -6px 30px -3px rgba(0,0,0,0.9),0 0 20px -2px rgba(16,185,129,0.25) !important;}
+@media (min-width:768px){#mobileBottomNav{display:none !important;}
+}
+@media (max-width:768px){html,body{-webkit-overflow-scrolling:touch;}
+input,select,textarea{font-size:16px !important;min-height:42px !important;}
+.dark [id$="PreviewBox"],.dark [id^="tpl"][id$="Preview"],.dark [id^="intMsg"],.dark .whatsapp-chat-bubble{background:linear-gradient(135deg,rgba(0,92,75,0.98) 0%,rgba(0,68,55,0.98) 100%) !important;color:#e9edef !important;border:1px solid rgba(52,211,153,0.55) !important;box-shadow:0 0 24px -2px rgba(16,185,129,0.45),0 4px 14px -2px rgba(0,0,0,0.75),inset 0 0 12px rgba(52,211,153,0.22) !important;font-size:11px !important;line-height:1.6 !important;border-radius:1.25rem 0.25rem 1.25rem 1.25rem !important;}
+[id$="PreviewBox"],[id^="tpl"][id$="Preview"],[id^="intMsg"]{font-size:11px !important;line-height:1.6 !important;}
+.contact-card{border-radius:1.25rem !important;}
+.dark .contact-card{box-shadow:0 0 22px -2px rgba(16,185,129,0.35),0 6px 18px -2px rgba(0,0,0,0.75) !important;border-color:rgba(52,211,153,0.5) !important;}
+.btn-press:active,button:active:not([disabled]){transform:scale(0.96) !important;filter:brightness(0.94);}
+.dark .btn-press:active,.dark button:active:not([disabled]){filter:brightness(1.12);}
+nav.md\:hidden button[class*="scale-105"] i,nav.md\:hidden button[class*="font-extrabold"] i{filter:drop-shadow(0 0 6px currentColor);}
+.fixed.z-50:not(.hidden){align-items:flex-end !important;padding:0 !important;}
+.fixed.z-50:not(.hidden) > div{border-bottom-left-radius:0 !important;border-bottom-right-radius:0 !important;border-top-left-radius:2rem !important;border-top-right-radius:2rem !important;width:100% !important;max-width:100% !important;max-height:88vh !important;overflow-y:auto !important;border-top:2px solid rgba(52,211,153,0.6) !important;box-shadow:0 -15px 50px -5px rgba(0,0,0,0.9),0 0 40px 4px rgba(16,185,129,0.35) !important;padding-bottom:max(2rem,env(safe-area-inset-bottom,24px)) !important;}
+#toast{left:1rem !important;right:1rem !important;width:auto !important;max-width:calc(100% - 2rem) !important;bottom:5.25rem !important;border-radius:1.25rem !important;box-shadow:0 0 35px 6px rgba(16,185,129,0.5),0 15px 35px rgba(0,0,0,0.85) !important;}
+}
+@media (max-width:640px){body{font-size:14px;-webkit-tap-highlight-color:transparent;}
+.fixed.z-50:not(.hidden).modal-sheet-wrapper > div,.fixed.z-50:not(.hidden).items-end > div{animation:modalSheetSlideUp 0.28s cubic-bezier(0.16,1,0.3,1) forwards !important;}
+#mainNavTabsBar{position:sticky !important;top:0 !important;z-index:45 !important;padding-top:0.35rem !important;padding-bottom:0.35rem !important;}
+#mainNavTabsBar button{padding:0.4rem 0.65rem !important;font-size:0.75rem !important;border-radius:0.75rem !important;}
+.card-luxury{padding:1rem !important;border-radius:1.25rem !important;}
+.card-luxury:hover,.btn-press:hover,[class*="group-hover:scale-"],[class*="group-hover:rotate-"],[class*="group-hover:translate-"]{transform:none !important;}
+h1{font-size:1.125rem !important;line-height:1.3 !important;}
+h2{font-size:1.05rem !important;line-height:1.3 !important;}
+h3{font-size:0.95rem !important;line-height:1.3 !important;}
+h4{font-size:0.85rem !important;line-height:1.3 !important;}
+.space-y-6 >:not([hidden]) ~:not([hidden]){margin-top:0.625rem !important;}
+.space-y-5 >:not([hidden]) ~:not([hidden]){margin-top:0.5rem !important;}
+.space-y-4 >:not([hidden]) ~:not([hidden]){margin-top:0.5rem !important;}
+.text-3xl,.text-4xl{font-size:1.45rem !important;line-height:1.15 !important;}
+.w-9.h-9,.w-10.h-10,.w-13.h-13,.w-15.h-15{width:1.85rem !important;height:1.85rem !important;border-radius:0.55rem !important;}
+.w-9.h-9 svg,.w-10.h-10 svg,.w-13.h-13 svg,.w-15.h-15 svg{width:1.05rem !important;height:1.05rem !important;}
+main{overflow-x:hidden !important;padding-left:0.5rem !important;padding-right:0.5rem !important;}
+.ambient-bg,.orb-1,.orb-2,.orb-3,div.rounded-full[class*="blur-"],div.pointer-events-none[class*="blur-"]{display:none !important;}
+.safe-area-pb{padding-bottom:max(16px,env(safe-area-inset-bottom,16px)) !important;}
+}
+#tacticalLockScreen:not(.hidden){position:fixed !important;inset:0 !important;width:100vw !important;height:100vh !important;height:100dvh !important;z-index:9999 !important;display:flex !important;align-items:center !important;justify-content:center !important;padding:1rem !important;overflow-y:auto !important;margin:0 !important;}
+#tacticalLockScreen > .auth-card{margin:auto !important;width:100% !important;max-width:24rem !important;border-radius:1.5rem !important;}
+</style>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300 selection:bg-emerald-500 selection:text-white flex flex-col antialiased relative">
+<div id="tacticalLockScreen" style="display: flex;" class="fixed inset-0 z-[9999] bg-slate-950 flex items-center justify-center p-4 transition-opacity duration-300 antialiased selection:bg-emerald-500 selection:text-white">
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-20 -left-20 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl"></div>
+</div>
+<div class="auth-card relative max-w-sm w-full bg-slate-900/95 backdrop-blur-2xl border border-slate-800 rounded-3xl p-6 sm:p-7 shadow-2xl shadow-black/80 text-center space-y-5">
+<div class="space-y-3">
+<div class="inline-flex p-1.5 bg-slate-950 rounded-2xl border border-emerald-500/40 shadow-lg shadow-emerald-500/10">
+<img src="./icon-192.png" alt="סמל חטיבת יהונתן" class="h-16 w-auto object-contain rounded-xl" width="64" height="64">
+</div>
+<div>
+<h2 class="text-xl font-black text-white tracking-tight">רלש״ון – חטיבת יהונתן 187</h2>
+<p class="text-xs text-emerald-400 font-extrabold tracking-wide mt-0.5">גישה מאובטחת למורשים בלבד • ״לֹא נָשׂוֹג אָחוֹר״</p>
+</div>
+</div>
+<div id="authLoadingState" class="hidden py-3 text-xs text-emerald-400 font-bold flex items-center justify-center gap-2">
+<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i>
+<span>מאמת הרשאות מול Firebase...</span>
+</div>
+<div id="authButtonsContainer" class="space-y-3">
+<button type="button" onclick="signInWithGoogle()" class="btn-press w-full py-3 px-4 rounded-2xl bg-white hover:bg-slate-100 text-slate-900 font-black text-sm shadow-lg flex items-center justify-center gap-2.5 cursor-pointer transition">
+<svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+<span>כניסה מאובטחת עם Google</span>
+</button>
+<button type="button" onclick="toggleEmailLoginForm()" class="w-full py-2 px-3 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-300 font-bold text-xs cursor-pointer transition border border-slate-700/80">
+או התחברות עם אימייל וסיסמה
+</button>
+<form id="emailLoginForm" onsubmit="handleEmailLoginSubmit(event)" class="hidden space-y-3 text-right pt-2 border-t border-slate-800">
+<div>
+<label class="block text-xs font-bold text-slate-300 mb-1">כתובת אימייל מורשית:</label>
+<input type="email" id="lockScreenEmailInput" placeholder="name@gmail.com" dir="ltr" class="w-full py-2.5 px-3.5 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-sm font-mono transition" aria-label="כתובת אימייל">
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-300 mb-1">סיסמה:</label>
+<div class="relative">
+<input type="password" id="lockScreenPasswordInput" placeholder="הזן סיסמה..." class="w-full py-2.5 px-3.5 pl-10 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-sm font-mono transition" aria-label="סיסמה">
+<button type="button" onclick="togglePasswordVisibility()" class="p-1 text-slate-400 hover:text-white absolute left-2.5 top-2 cursor-pointer" aria-label="הצג או הסתר סיסמה">
+<i id="lockEyeIcon" data-lucide="eye" class="w-4 h-4"></i>
+</button>
+</div>
+</div>
+<button type="submit" class="btn-press w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-xs shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 cursor-pointer transition">
+<i data-lucide="log-in" class="w-4 h-4"></i>
+<span>כניסה למערכת</span>
+</button>
+</form>
+</div>
+<p id="lockScreenError" class="text-xs text-rose-400 font-bold hidden flex items-center justify-center gap-1.5 bg-rose-950/50 border border-rose-800/60 rounded-xl p-2.5">
+<i data-lucide="shield-alert" class="w-4 h-4 shrink-0"></i>
+<span id="lockScreenErrorText">שגיאת התחברות</span>
+</p>
+<div class="text-[10px] text-slate-400 pt-2 border-t border-slate-800">
+מאובטח ע״י Firebase Authentication ו-Firestore Rules • ללא נתונים רגישים בקוד
+</div>
+</div>
+</div>
+<div class="ambient-bg grid-overlay-light dark:grid-overlay-dark">
+<div class="orb-1"></div>
+<div class="orb-2"></div>
+<div class="orb-3"></div>
+</div>
+<div id="toast" class="fixed top-2.5 left-1/2 -translate-x-1/2 z-[250] transform -translate-y-16 scale-95 opacity-0 transition-colors duration-150 pointer-events-none bg-slate-900/95 dark:bg-slate-800/95 text-white px-3 py-1.5 rounded-full shadow-xl border border-slate-700/70 backdrop-blur-md flex items-center gap-2 text-xs font-bold max-w-[92vw] whitespace-nowrap">
+<span id="toastDot" class="w-2 h-2 rounded-full bg-emerald-400 shrink-0 animate-ping"></span>
+<span id="toastMsg" class="truncate leading-none">נשמר בהצלחה!</span>
+<button type="button" onclick="hideToastNow()" class="p-0.5 rounded-full text-slate-600 dark:text-slate-300 hover:text-white shrink-0 cursor-pointer ml-1" title="סגור התראה" aria-label="סגור התראה">
+<i data-lucide="x" class="w-3 h-3"></i>
+</button>
+</div>
+<header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-800/80 shadow-sm transition-colors duration-200">
+<div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2 sm:gap-3.5">
+<div class="relative p-1 bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 rounded-xl sm:rounded-2xl border-2 border-emerald-500/50 shadow-md cursor-pointer shrink-0 hover:scale-105 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/20 transition-colors duration-200 group" onclick="openEmblemModal()" title="סמל חטיבת יהונתן">
+<img src="./icon-192.png" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c8/%D7%A1%D7%9E%D7%9C_%D7%97%D7%98%D7%99%D7%91%D7%AA_%D7%99%D7%94%D7%95%D7%A0%D7%AA%D7%9F.jpg'" referrerpolicy="no-referrer" alt="סמל חטיבת יהונתן" class="h-9 w-9 sm:h-11 sm:w-11 object-contain rounded-lg sm:rounded-xl group-hover:rotate-1 transition-transform" width="44" height="44">
+</div>
+<div>
+<div class="flex items-center gap-1.5 sm:gap-2">
+<h1 class="font-black text-base sm:text-lg text-slate-900 dark:text-white tracking-tight leading-none">
+רלש״ון 187
+</h1>
+<span class="inline-block text-[10px] font-extrabold px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 leading-none shadow-xs">
+לשכת מח״ט
+</span>
+<button type="button" onclick="openMobileNavDrawer()" class="md:hidden btn-press px-2 py-0.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-[11px] shadow-xs flex items-center gap-1 cursor-pointer" title="פתח תפריט ממשקים" aria-label="פתח תפריט ממשקים">
+<i data-lucide="menu" class="w-3 h-3"></i>
+<span>ממשקים</span>
+</button>
+</div>
+<p class="text-[11px] text-emerald-600 dark:text-emerald-400 font-bold mt-1 tracking-tight leading-none flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>״לֹא נָשׂוֹג אָחוֹר״</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5 sm:gap-2">
+<div id="liveClockWidget" class="hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-xs font-bold text-slate-700 dark:text-slate-200 shadow-sm transition-colors duration-200 cursor-default" title="שעון חטיבתי חי">
+<i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>
+<span id="liveClockDisplay">יום חמישי 08/10 • 11:32:18</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+</div>
+<button onclick="restoreAllDefaultDataWithToast()" class="hidden lg:flex btn-press p-2 rounded-xl bg-slate-100/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-slate-600 dark:text-slate-300 hover:text-emerald-600 border border-slate-200/80 dark:border-slate-700/80 transition-colors cursor-pointer" title="שחזור ורענון כל נתוני החטיבה" aria-label="שחזור ורענון כל נתוני החטיבה">
+<i data-lucide="database-backup" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+</button>
+<button id="navNotificationBtn" onclick="openNotificationSettingsModal()" class="btn-press p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-amber-950/50 text-slate-700 dark:text-slate-200 border border-slate-200/60 dark:border-slate-700/60 hover:border-amber-400 hover:shadow-md hover:shadow-amber-500/10 cursor-pointer relative transition-colors duration-200 group" title="הגדרות התראות לטלפון" aria-label="הגדרות התראות לטלפון">
+<i id="headerBellIcon" data-lucide="bell" class="w-4 h-4 text-amber-500 group-hover:scale-110 transition-transform"></i>
+<span id="navNotificationBadgeDot" class="w-2 h-2 rounded-full bg-emerald-500 absolute top-1 right-1 hidden animate-pulse"></span>
+</button>
+<div id="cloudSyncNavBadge" onclick="openCloudSyncModal()" class="hidden lg:flex btn-press items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 text-xs font-bold cursor-pointer hover:bg-emerald-100 dark:hover:bg-emerald-900/60 hover:shadow-md hover:shadow-emerald-500/15 transition-colors duration-200 group" title="סנכרון ענן ויומן פעיל">
+<i id="cloudSyncIcon" data-lucide="cloud" class="w-3.5 h-3.5 text-emerald-500 group-hover:scale-110 transition-transform"></i>
+<span id="cloudSyncStatusText">מחובר ומסונכרן</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+</div>
+<div onclick="switchTab('calendar')" class="hidden xl:flex btn-press items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-900 dark:text-amber-300 text-xs font-bold hover:scale-105 hover:border-amber-500/60 hover:bg-amber-500/15 hover:shadow-md hover:shadow-amber-500/10 transition-colors duration-200 cursor-pointer group" title="יומן החטיבה 187">
+<i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 group-hover:scale-110 transition-transform"></i>
+<span>יומן: <strong>187 - יומן חטיבתי</strong></span>
+</div>
+<div class="hidden lg:flex items-center gap-1.5">
+<button onclick="openChangePasswordModal()" class="btn-press px-2.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-amber-950/40 hover:border-amber-400 text-slate-700 hover:text-amber-700 dark:text-slate-300 dark:hover:text-amber-300 text-xs font-semibold flex items-center gap-1 border border-slate-200/60 dark:border-slate-700/60 hover:shadow-md hover:shadow-amber-500/10 transition-colors duration-200 cursor-pointer group" title="שינוי סיסמה" aria-label="שינוי סיסמה">
+<i data-lucide="key" class="w-3.5 h-3.5 text-amber-500 group-hover:scale-110 transition-transform"></i>
+<span>סיסמה</span>
+</button>
+<button onclick="openBackupRestoreModal()" class="btn-press px-2.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:border-emerald-400 text-slate-700 hover:text-emerald-700 dark:text-slate-300 dark:hover:text-emerald-300 text-xs font-semibold flex items-center gap-1 border border-slate-200/60 dark:border-slate-700/60 hover:shadow-md hover:shadow-emerald-500/10 transition-colors duration-200 cursor-pointer group" title="גיבוי / שחזור" aria-label="גיבוי / שחזור">
+<i data-lucide="archive" class="w-3.5 h-3.5 text-emerald-600 group-hover:scale-110 transition-transform"></i>
+<span>גיבוי</span>
+</button>
+<button onclick="resetToDefaultData()" class="btn-press px-2.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 hover:border-slate-400 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white text-xs font-semibold flex items-center gap-1 border border-slate-200/60 dark:border-slate-700/60 hover:shadow-md transition-colors duration-200 cursor-pointer group" title="איפוס נתונים לברירת מחדל" aria-label="איפוס נתונים לברירת מחדל">
+<i data-lucide="rotate-ccw" class="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-500"></i>
+<span>איפוס</span>
+</button>
+</div>
+<button onclick="toggleDarkMode()" class="btn-press p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-amber-50/70 dark:hover:bg-amber-950/40 hover:border-amber-400 text-slate-700 dark:text-slate-200 border border-slate-200/60 dark:border-slate-700/60 hover:shadow-md hover:shadow-amber-500/10 transition-colors duration-200 cursor-pointer group" title="החלף מצב תצוגה" aria-label="החלף מצב תצוגה בין כהה לבהיר">
+<i data-lucide="moon" class="w-4 h-4 hidden dark:block text-amber-400 group-hover:rotate-12 transition-transform"></i>
+<i data-lucide="sun" class="w-4 h-4 block dark:hidden text-amber-500 group-hover:rotate-90 transition-transform duration-500"></i>
+</button>
+<button onclick="lockSystemNow()" class="btn-press p-2 rounded-xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-900/60 hover:border-rose-400 border border-rose-200 dark:border-rose-900/60 hover:shadow-md hover:shadow-rose-500/20 transition-colors duration-200 cursor-pointer group" title="נעילת מערכת" aria-label="נעילת מערכת לשכה">
+<i data-lucide="lock" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+</button>
+</div>
+</div>
+<div id="mobileTacticalRibbon" class="lg:hidden flex items-center gap-1.5 px-2.5 py-1.5 overflow-x-auto no-scrollbar border-t border-slate-100 dark:border-slate-800/80 bg-slate-50/90 dark:bg-slate-900/90">
+<div id="liveClockWidgetMobile" class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 text-[11px] font-bold text-emerald-800 dark:text-emerald-300 shadow-2xs whitespace-nowrap shrink-0">
+<i data-lucide="clock" class="w-3 h-3 text-emerald-600 dark:text-emerald-400"></i>
+<span id="liveClockDisplayMobile">יום חמישי 08/10 • 11:32:18</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+</div>
+<div id="cloudSyncNavBadgeMobile" onclick="openCloudSyncModal()" class="btn-press flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 text-[11px] font-bold cursor-pointer whitespace-nowrap shrink-0 shadow-2xs">
+<i id="cloudSyncIconMobile" data-lucide="cloud" class="w-3 h-3 text-emerald-500"></i>
+<span id="cloudSyncStatusTextMobile">מחובר ומסונכרן</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+</div>
+<div onclick="switchTab('calendar')" class="btn-press flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-900 dark:text-amber-300 text-[11px] font-bold cursor-pointer whitespace-nowrap shrink-0 shadow-2xs">
+<i data-lucide="calendar" class="w-3 h-3 text-amber-600 dark:text-amber-400"></i>
+<span>יומן: <strong>187 - יומן חטיבתי</strong></span>
+</div>
+<button onclick="restoreAllDefaultDataWithToast()" class="btn-press px-2.5 py-1 rounded-full bg-white dark:bg-slate-800 hover:bg-emerald-50 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-[11px] font-bold flex items-center gap-1 whitespace-nowrap shrink-0 shadow-2xs cursor-pointer" title="שחזור נתוני חטיבה" aria-label="שחזור ורענון כל נתוני החטיבה">
+<i data-lucide="database-backup" class="w-3 h-3 text-emerald-600"></i>
+<span>שחזור</span>
+</button>
+<button onclick="openChangePasswordModal()" class="btn-press px-2.5 py-1 rounded-full bg-white dark:bg-slate-800 hover:bg-amber-50 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-[11px] font-bold flex items-center gap-1 whitespace-nowrap shrink-0 shadow-2xs cursor-pointer" title="שינוי סיסמה" aria-label="שינוי סיסמה">
+<i data-lucide="key" class="w-3 h-3 text-amber-500"></i>
+<span>סיסמה</span>
+</button>
+<button onclick="openBackupRestoreModal()" class="btn-press px-2.5 py-1 rounded-full bg-white dark:bg-slate-800 hover:bg-emerald-50 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-[11px] font-bold flex items-center gap-1 whitespace-nowrap shrink-0 shadow-2xs cursor-pointer" title="גיבוי ושחזור" aria-label="גיבוי ושחזור">
+<i data-lucide="archive" class="w-3 h-3 text-emerald-600"></i>
+<span>גיבוי</span>
+</button>
+<button onclick="resetToDefaultData()" class="btn-press px-2.5 py-1 rounded-full bg-white dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-[11px] font-bold flex items-center gap-1 whitespace-nowrap shrink-0 shadow-2xs cursor-pointer" title="איפוס נתונים" aria-label="איפוס נתונים">
+<i data-lucide="rotate-ccw" class="w-3 h-3"></i>
+<span>איפוס</span>
+</button>
+</div>
+<div id="mainNavTabsBar" class="flex max-w-7xl mx-auto px-2 sm:px-4 gap-1 sm:gap-2 overflow-x-auto no-scrollbar border-t border-slate-100 dark:border-slate-800/80 py-2 text-xs sm:text-sm font-semibold bg-white/95 dark:bg-slate-900/95 shadow-xs">
+<button id="navTabOverview" onclick="switchTab('overview')" class="group btn-press py-2 px-3.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/70 text-emerald-700 dark:text-emerald-300 font-black shadow-sm ring-1 ring-emerald-500/30 border-b-2 border-b-emerald-500 flex items-center gap-2 whitespace-nowrap transition-colors duration-200 cursor-pointer relative" title="מסך הבית הראשי" aria-label="מסך הבית הראשי">
+<i data-lucide="home" class="w-4 h-4 text-emerald-500 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">ראשי</span>
+</button>
+<button id="navTabCalendar" onclick="switchTab('calendar')" class="group btn-press py-2 px-3.5 rounded-xl text-slate-600 hover:text-emerald-600 hover:bg-emerald-50/50 dark:text-slate-700 dark:text-slate-300 dark:hover:text-emerald-400 dark:hover:bg-emerald-950/30 border-b-2 border-transparent hover:border-emerald-300 flex items-center gap-2 whitespace-nowrap transition-colors duration-200 cursor-pointer font-medium" title="לוח שנה מסונכרן" aria-label="לוח שנה מסונכרן">
+<i data-lucide="calendar" class="w-4 h-4 text-emerald-500 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">לוח שנה</span>
+<span class="text-[10px] font-black px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 shadow-xs">187</span>
+</button>
+<button id="navTabRsvp" onclick="switchTab('rsvp')" class="group btn-press py-2 px-3.5 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-indigo-50/50 dark:text-slate-700 dark:text-slate-300 dark:hover:text-indigo-400 dark:hover:bg-indigo-950/30 border-b-2 border-transparent hover:border-indigo-300 flex items-center gap-2 whitespace-nowrap transition-colors duration-200 cursor-pointer font-medium" title="דשבורד מעקב אישורי הגעה והתייצבות מפקדים" aria-label="דשבורד מעקב אישורי הגעה והתייצבות מפקדים">
+<i data-lucide="user-check" class="w-4 h-4 text-indigo-500 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">אישורים</span>
+<span id="navRsvpPendingBadge" class="text-[10px] font-black px-1.5 py-0.5 rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-700 shadow-xs">4</span>
+</button>
+<button id="navTabPhonebook" onclick="switchTab('phonebook')" class="group btn-press py-2 px-3.5 rounded-xl text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/50 dark:text-slate-700 dark:text-slate-300 dark:hover:text-cyan-400 dark:hover:bg-cyan-950/30 border-b-2 border-transparent hover:border-cyan-300 flex items-center gap-2 whitespace-nowrap transition-colors duration-200 cursor-pointer font-medium" title="אלפון חטיבת יהונתן" aria-label="אלפון חטיבת יהונתן">
+<i data-lucide="book-open" class="w-4 h-4 text-cyan-500 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">אלפון</span>
+<span id="navPhonebookCount" class="text-xs px-2 py-0.5 rounded-full bg-cyan-100 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-300 font-bold border border-cyan-300 dark:border-cyan-700 shadow-xs">28</span>
+</button>
+<button id="navTabTasks" onclick="switchTab('tasks')" class="group btn-press py-2 px-3.5 rounded-xl text-slate-600 hover:text-amber-600 hover:bg-amber-50/50 dark:text-slate-700 dark:text-slate-300 dark:hover:text-amber-400 dark:hover:bg-amber-950/30 border-b-2 border-transparent hover:border-amber-300 flex items-center gap-2 whitespace-nowrap transition-colors duration-200 cursor-pointer font-medium" title="מעקב משימות לשכה" aria-label="מעקב משימות לשכה">
+<i data-lucide="check-square" class="w-4 h-4 text-amber-500 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">משימות</span>
+<span id="navTasksCount" class="text-xs px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 font-bold border border-amber-300 dark:border-amber-700 shadow-xs">1</span>
+</button>
+<button id="navTabTemplates" onclick="switchTab('templates')" class="group btn-press py-2 px-3.5 rounded-xl text-slate-600 hover:text-purple-600 hover:bg-purple-50/50 dark:text-slate-700 dark:text-slate-300 dark:hover:text-purple-400 dark:hover:bg-purple-950/30 border-b-2 border-transparent hover:border-purple-300 flex items-center gap-2 whitespace-nowrap transition-colors duration-200 cursor-pointer font-medium" title="תבניות והודעות מהירות" aria-label="תבניות והודעות מהירות">
+<i data-lucide="message-square-text" class="w-4 h-4 text-purple-500 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">תבניות</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-3 sm:px-4 py-3 sm:py-6 pb-24 sm:pb-8 flex-1 w-full space-y-4 sm:space-y-6">
+<div id="mobileNotifPromptBanner" class="hidden bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white p-2.5 sm:px-4 sm:py-2 text-xs font-bold shadow-md relative z-30 transition-colors rounded-xl sm:rounded-2xl mx-1 sm:mx-0 my-1 sm:my-2 border border-amber-500/50">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-2">
+<div class="flex items-center justify-between w-full sm:w-auto gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<i data-lucide="bell-ring" class="w-4 h-4 text-amber-300 shrink-0"></i>
+<span class="text-xs font-bold truncate">התראות לטלפון לפני דיונים חטיבתיים</span>
+</div>
+<button type="button" onclick="dismissNotifBanner()" class="sm:hidden p-1 text-amber-200 hover:text-white cursor-pointer" aria-label="סגור באנר התראות"><i data-lucide="x" class="w-4 h-4"></i></button>
+</div>
+<div class="flex items-center gap-1.5 shrink-0 w-full sm:w-auto justify-end">
+<button type="button" onclick="openMobileGuideModal('notif')" class="btn-press px-2.5 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-[11px] font-medium cursor-pointer">מדריך 📱</button>
+<button type="button" onclick="requestMobileNotificationPermission()" class="btn-press px-3 py-1 rounded-lg bg-white text-amber-950 font-black text-xs shadow-sm hover:bg-amber-50 cursor-pointer">הפעל עכשיו 📲</button>
+<button type="button" onclick="dismissNotifBanner()" class="hidden sm:inline-flex p-1 text-amber-200 hover:text-white cursor-pointer" title="סגור" aria-label="סגור באנר התראות"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
+</div>
+</div>
+</div>
+<div id="tabContentOverview" class="space-y-6">
+<div class="card-luxury rounded-2xl sm:rounded-3xl p-3 sm:p-5 relative overflow-hidden">
+<div class="absolute -left-10 -bottom-10 w-64 h-64 bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -right-10 -top-10 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+<div class="flex items-center gap-5">
+<div class="relative p-2 bg-white dark:bg-slate-800 rounded-3xl border-2 border-emerald-500/40 shadow-xl shadow-emerald-500/10 flex-shrink-0 cursor-pointer hover:scale-105 transition-transform" onclick="openEmblemModal()">
+<img src="./icon-192.png" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c8/%D7%A1%D7%9E%D7%9C_%D7%97%D7%98%D7%99%D7%91%D7%AA_%D7%99%D7%94%D7%95%D7%A0%D7%AA%D7%9F.jpg'" referrerpolicy="no-referrer" alt="סמל חטיבת יהונתן" class="h-11 w-11 sm:h-20 sm:w-auto sm:max-w-[76px] object-contain rounded-xl sm:rounded-2xl" width="76" height="76">
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight">מפקדת חטיבת יהונתן</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-black">187</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 font-medium mt-1">
+עמדת רל״ש החטיבה • יומן יעד חטיבתי: <strong class="text-emerald-600 dark:text-emerald-400">187brigade@gmail.com</strong>
+</p>
+<div class="text-xs text-emerald-700 dark:text-emerald-400 font-extrabold italic mt-1.5 flex items-center gap-2">
+<i data-lucide="shield" class="w-3.5 h-3.5"></i>
+סיסמת החטיבה: "לֹא נָשׂוֹג אָחוֹר"
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-1.5 sm:gap-2 w-full lg:w-auto pt-1">
+<button onclick="switchTab('phonebook')" class="btn-press px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-[11px] sm:text-xs shadow-sm flex items-center justify-center gap-1 sm:gap-2 cursor-pointer active:scale-95">
+<i data-lucide="book-open" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"></i>
+<span class="truncate">אלפון חטיבה</span>
+</button>
+<button onclick="switchTab('templates')" class="btn-press px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-purple-600 to-violet-600 text-white font-bold text-[11px] sm:text-xs shadow-sm flex items-center justify-center gap-1 sm:gap-2 cursor-pointer active:scale-95">
+<i data-lucide="message-square" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"></i>
+<span class="truncate">תבניות</span>
+</button>
+</div>
+</div>
+</div>
+<div class="card-luxury rounded-2xl sm:rounded-3xl p-3 sm:p-4 bg-gradient-to-b from-emerald-50/70 via-white to-white dark:from-emerald-950/30 dark:via-slate-900 dark:to-slate-900 border-t-4 border-t-emerald-600 border-x border-b border-emerald-200/80 dark:border-emerald-800/60 shadow-sm hover:shadow-xl shadow-emerald-500/10 transition-colors duration-200 relative overflow-hidden group">
+<div class="absolute -left-10 -top-10 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-start gap-4 relative z-10">
+<div class="w-11 h-11 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-bold shadow-md shadow-emerald-600/25 shrink-0 group-hover:scale-110 transition-transform duration-300">
+<i data-lucide="lock" class="w-5 h-5"></i>
+</div>
+<div class="space-y-3 flex-1">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-emerald-100 dark:border-emerald-950/80 pb-3">
+<div class="flex items-center gap-2.5">
+<img src="./icon-192.png" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c8/%D7%A1%D7%9E%D7%9C_%D7%97%D7%98%D7%99%D7%91%D7%AA_%D7%99%D7%94%D7%95%D7%A0%D7%AA%D7%9F.jpg'" referrerpolicy="no-referrer" alt="סמל" class="h-8 w-auto object-contain drop-shadow" width="32" height="32">
+<div>
+<h3 class="font-black text-slate-900 dark:text-white text-base leading-tight">
+כללי ברזל לשכתיים מחייבים • חטיבת יהונתן 187
+</h3>
+<span class="text-[11px] text-slate-700 dark:text-slate-300 font-medium">לשכת מפקד החטיבה</span>
+</div>
+</div>
+<span class="text-xs font-black text-emerald-700 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950/80 px-2.5 py-1 rounded-xl border border-emerald-300 dark:border-emerald-700 shadow-xs">סיסמת החטיבה: "לֹא נָשׂוֹג אָחוֹר"</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 text-xs text-slate-700 dark:text-slate-300">
+<div class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 p-2.5 rounded-xl border border-emerald-100 dark:border-slate-700/60 shadow-xs hover:border-emerald-400 transition">
+<i data-lucide="check" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+<span>יומן יעד בלבד: <strong>187 - יומן חטיבתי</strong> (187brigade@gmail.com)</span>
+</div>
+<div class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 p-2.5 rounded-xl border border-rose-100 dark:border-slate-700/60 shadow-xs hover:border-rose-400 transition">
+<i data-lucide="x" class="w-4 h-4 text-rose-600 flex-shrink-0"></i>
+<span><strong>ללא קישור Google Meet</strong> אוטומטי לעולם בזימוני יומן</span>
+</div>
+<div class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 p-2.5 rounded-xl border border-indigo-100 dark:border-slate-700/60 shadow-xs hover:border-indigo-400 transition">
+<i data-lucide="user-check" class="w-4 h-4 text-indigo-600 flex-shrink-0"></i>
+<span>זיהוי עוזרות אישיות (בדיקה מקדימה מול לשכות) לפני אישור סופי</span>
+</div>
+<div class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 p-2.5 rounded-xl border border-blue-100 dark:border-slate-700/60 shadow-xs hover:border-blue-400 transition">
+<i data-lucide="mail" class="w-4 h-4 text-blue-600 flex-shrink-0"></i>
+<span>כלל שני מיילים: הכללת מייל ראשי ועבודה יחד</span>
+</div>
+<div class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 p-2.5 rounded-xl border border-amber-100 dark:border-slate-700/60 shadow-xs hover:border-amber-400 transition">
+<i data-lucide="flag" class="w-4 h-4 text-amber-600 flex-shrink-0"></i>
+<span>התרעה אוטומטית למג״ד כשאנשי גדוד מוזמנים</span>
+</div>
+<div class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 p-2.5 rounded-xl border border-purple-100 dark:border-slate-700/60 shadow-xs hover:border-purple-400 transition">
+<i data-lucide="message-circle" class="w-4 h-4 text-purple-600 flex-shrink-0"></i>
+<span>תיאום לו״ז חטיבתי, אלפון מפקדים ומעקב משימות לשכה</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3.5 stats-grid-mobile">
+<div onclick="switchTab('calendar')" class="card-luxury btn-press rounded-2xl p-2.5 sm:p-4 bg-gradient-to-b from-emerald-50/80 via-white to-white dark:from-emerald-950/40 dark:via-slate-900 dark:to-slate-900 border-t-4 border-t-emerald-500 border-x border-b border-emerald-200/80 dark:border-emerald-800/60 shadow-sm transition-colors duration-200 cursor-pointer relative overflow-hidden flex flex-col justify-between space-y-1.5 sm:space-y-3 group" title="מעבר ליומן החטיבה">
+<div class="absolute -left-10 -top-10 w-44 h-44 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between border-b border-emerald-100 dark:border-emerald-950/80 pb-3 relative z-10">
+<span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-[-3px] transition-transform flex items-center gap-1">
+<i data-lucide="arrow-left" class="w-4 h-4"></i>
+</span>
+<div class="flex items-center gap-2.5">
+<span class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white">יומן 187</span>
+<div class="w-9 h-9 rounded-2xl bg-emerald-500 text-white flex items-center justify-center font-bold shadow-md shadow-emerald-500/25 group-hover:scale-110 group-hover:bg-emerald-600 transition-colors duration-200">
+<i data-lucide="calendar" class="w-4 h-4"></i>
+</div>
+</div>
+</div>
+<div class="flex items-baseline gap-2 pt-1 relative z-10">
+<span id="statCalEventsCount" class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">23</span>
+<span class="text-xl sm:text-2xl font-bold text-slate-700 dark:text-slate-200">אירועים</span>
+</div>
+<div class="pt-2 border-t border-emerald-100/60 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-700 dark:text-slate-300 font-medium relative z-10">
+<span>מסונכרן חי 24/7 ליומן החטיבה</span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+</div>
+</div>
+<div onclick="switchTab('rsvp')" class="card-luxury btn-press rounded-2xl p-2.5 sm:p-4 bg-gradient-to-b from-indigo-50/80 via-white to-white dark:from-indigo-950/40 dark:via-slate-900 dark:to-slate-900 border-t-4 border-t-indigo-500 border-x border-b border-indigo-200/80 dark:border-indigo-800/60 shadow-sm transition-colors duration-200 cursor-pointer relative overflow-hidden flex flex-col justify-between space-y-1.5 sm:space-y-3 group" title="מעבר לאישורי הגעה">
+<div class="absolute -left-10 -top-10 w-44 h-44 bg-indigo-500/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between border-b border-indigo-100 dark:border-indigo-950/80 pb-3 relative z-10">
+<span class="px-2.5 py-0.5 rounded-lg text-[11px] font-black bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 shadow-xs">ממתינים</span>
+<div class="flex items-center gap-2.5">
+<span class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white">אישורי הגעה</span>
+<div class="w-9 h-9 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-bold shadow-md shadow-indigo-600/25 group-hover:scale-110 group-hover:bg-indigo-700 transition-colors duration-200">
+<i data-lucide="user-check" class="w-4 h-4"></i>
+</div>
+</div>
+</div>
+<div class="flex items-baseline gap-2 pt-1 relative z-10">
+<span id="statRsvpPendingCount" class="text-3xl sm:text-4xl font-black text-amber-500 dark:text-amber-400 tracking-tight">4</span>
+<span class="text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">קצינים טרם אישרו</span>
+</div>
+<div class="pt-2 border-t border-indigo-100/60 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-700 dark:text-slate-300 font-medium relative z-10">
+<span>לחץ לקוורום ושיגור תזכורת</span>
+<i data-lucide="chevron-left" class="w-3.5 h-3.5 text-indigo-500 group-hover:translate-x-[-3px] transition-transform"></i>
+</div>
+</div>
+<div onclick="switchTab('tasks')" class="card-luxury btn-press rounded-2xl p-2.5 sm:p-4 bg-gradient-to-b from-amber-50/80 via-white to-white dark:from-amber-950/40 dark:via-slate-900 dark:to-slate-900 border-t-4 border-t-amber-500 border-x border-b border-amber-200/80 dark:border-amber-800/60 shadow-sm transition-colors duration-200 cursor-pointer relative overflow-hidden flex flex-col justify-between space-y-1.5 sm:space-y-3 group" title="מעבר למשימות לשכה">
+<div class="absolute -left-10 -top-10 w-44 h-44 bg-amber-500/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between border-b border-amber-100 dark:border-amber-950/80 pb-3 relative z-10">
+<span id="statUrgentTasksBadge" class="w-6 h-6 rounded-lg flex items-center justify-center text-[11px] font-black bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-800 shadow-xs">1</span>
+<div class="flex items-center gap-2.5">
+<span class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white">משימות לשכה</span>
+<div class="w-9 h-9 rounded-2xl bg-amber-500 text-white flex items-center justify-center font-bold shadow-md shadow-amber-500/25 group-hover:scale-110 group-hover:bg-amber-600 transition-colors duration-200">
+<i data-lucide="check-square" class="w-4 h-4"></i>
+</div>
+</div>
+</div>
+<div class="flex items-baseline gap-2 pt-1 relative z-10">
+<span id="statPendingTasks" class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">1</span>
+<span class="text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">בטיפול פעיל</span>
+</div>
+<div class="pt-2 border-t border-amber-100/60 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-700 dark:text-slate-300 font-medium relative z-10">
+<span>כולל תדריך בוקר אוטומטי 08:00</span>
+<i data-lucide="chevron-left" class="w-3.5 h-3.5 text-amber-500 group-hover:translate-x-[-3px] transition-transform"></i>
+</div>
+</div>
+<div onclick="switchTab('phonebook')" class="card-luxury btn-press rounded-2xl p-2.5 sm:p-4 bg-gradient-to-b from-cyan-50/80 via-white to-white dark:from-cyan-950/40 dark:via-slate-900 dark:to-slate-900 border-t-4 border-t-cyan-500 border-x border-b border-cyan-200/80 dark:border-cyan-800/60 shadow-sm transition-colors duration-200 cursor-pointer relative overflow-hidden flex flex-col justify-between space-y-1.5 sm:space-y-3 group" title="מעבר לאלפון מפקדים">
+<div class="absolute -left-10 -top-10 w-44 h-44 bg-cyan-500/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between border-b border-cyan-100 dark:border-cyan-950/80 pb-3 relative z-10">
+<span class="text-xs font-bold text-slate-600 dark:text-slate-300 dark:text-slate-700 dark:text-slate-300">סגל מלא</span>
+<div class="flex items-center gap-2.5">
+<span class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white">אלפון מפקדים</span>
+<div class="w-9 h-9 rounded-2xl bg-cyan-500 text-white flex items-center justify-center font-bold shadow-md shadow-cyan-500/25 group-hover:scale-110 group-hover:bg-cyan-600 transition-colors duration-200">
+<i data-lucide="book-open" class="w-4 h-4"></i>
+</div>
+</div>
+</div>
+<div class="flex items-baseline gap-2 pt-1 relative z-10">
+<span id="statContactsCount" class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">17</span>
+<span class="text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">מפקדים ובעלי תפקיד</span>
+</div>
+<div class="pt-2 border-t border-cyan-100/60 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-700 dark:text-slate-300 font-medium relative z-10">
+<span>חיוג וואטסאפ וטלפון מהיר</span>
+<i data-lucide="chevron-left" class="w-3.5 h-3.5 text-cyan-500 group-hover:translate-x-[-3px] transition-transform"></i>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 sm:gap-4 quick-actions-mobile">
+<button onclick="switchTab('phonebook')" class="card-luxury btn-press p-3 sm:p-4 rounded-2xl bg-gradient-to-b from-cyan-50/80 via-white to-white dark:from-cyan-950/40 dark:via-slate-900 dark:to-slate-900 border-t-4 border-t-cyan-500 border-x border-b border-cyan-200/80 dark:border-cyan-800/60 shadow-sm transition-colors duration-200 text-right group cursor-pointer relative overflow-hidden flex flex-col justify-between space-y-2" title="אלפון חטיבת יהונתן 187 ופורומים" aria-label="אלפון חטיבת יהונתן 187 ופורומים">
+<div class="absolute -left-6 -top-6 w-36 h-36 bg-cyan-500/15 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between relative z-10 border-b border-cyan-100 dark:border-cyan-950/80 pb-3">
+<div class="w-10 h-10 rounded-2xl bg-cyan-600 text-white flex items-center justify-center font-bold shadow-md shadow-cyan-600/25 group-hover:scale-110 group-hover:bg-cyan-700 transition-colors duration-200">
+<i data-lucide="book-open" class="w-5 h-5"></i>
+</div>
+<span class="text-xs font-bold text-cyan-600 dark:text-cyan-400 flex items-center gap-1 group-hover:translate-x-[-3px] transition-transform">
+<span>28 מפקדים</span>
+<i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+</span>
+</div>
+<div class="relative z-10 space-y-1">
+<div class="font-extrabold text-slate-900 dark:text-white text-base sm:text-lg">אלפון חטיבה ופורומים</div>
+<div class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">חיוג ווואטסאפ מהיר, סינון לפי פורומים (מצומצם, מורחב, רמ״ט, מספרי 1) ועוזרות</div>
+</div>
+<div class="pt-3 border-t border-cyan-100/60 dark:border-slate-800/80 flex items-center justify-between text-xs text-cyan-700 dark:text-cyan-300 font-bold relative z-10">
+<span>פתיחת אלפון חטיבת יהונתן</span>
+<i data-lucide="chevron-left" class="w-4 h-4 text-cyan-500 group-hover:translate-x-[-3px] transition-transform"></i>
+</div>
+</button>
+<button onclick="switchTab('templates')" class="card-luxury btn-press p-3 sm:p-4 rounded-2xl bg-gradient-to-b from-purple-50/80 via-white to-white dark:from-purple-950/40 dark:via-slate-900 dark:to-slate-900 border-t-4 border-t-purple-500 border-x border-b border-purple-200/80 dark:border-purple-800/60 shadow-sm transition-colors duration-200 text-right group cursor-pointer relative overflow-hidden flex flex-col justify-between space-y-2" title="מחולל תבניות מהיר לוואטסאפ" aria-label="מחולל תבניות מהיר לוואטסאפ">
+<div class="absolute -left-6 -top-6 w-36 h-36 bg-purple-500/15 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between relative z-10 border-b border-purple-100 dark:border-purple-950/80 pb-3">
+<div class="w-10 h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-bold shadow-md shadow-purple-600/25 group-hover:scale-110 group-hover:bg-purple-700 transition-colors duration-200">
+<i data-lucide="message-square-text" class="w-5 h-5"></i>
+</div>
+<span class="text-xs font-bold text-purple-600 dark:text-purple-400 flex items-center gap-1 group-hover:translate-x-[-3px] transition-transform">
+<span>מחולל הודעות</span>
+<i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+</span>
+</div>
+<div class="relative z-10 space-y-1">
+<div class="font-extrabold text-slate-900 dark:text-white text-base sm:text-lg">מחולל תבניות מהיר לוואטסאפ</div>
+<div class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">תזכורות לו״ז, הודעות דחייה/ביטול, בקשת חומרי רקע ומצגות, ותיאומים דחופים</div>
+</div>
+<div class="pt-3 border-t border-purple-100/60 dark:border-slate-800/80 flex items-center justify-between text-xs text-purple-700 dark:text-purple-300 font-bold relative z-10">
+<span>מעבר למחולל ההודעות והתבניות</span>
+<i data-lucide="chevron-left" class="w-4 h-4 text-purple-500 group-hover:translate-x-[-3px] transition-transform"></i>
+</div>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div onclick="switchTab('tasks')" class="card-luxury btn-press rounded-2xl sm:rounded-3xl p-3 sm:p-5 bg-gradient-to-b from-amber-50/70 via-white to-white dark:from-amber-950/30 dark:via-slate-900 dark:to-slate-900 border-t-4 border-t-amber-500 border-x border-b border-amber-200/80 dark:border-amber-800/60 hover:border-amber-500 dark:hover:border-amber-400 shadow-sm hover:shadow-xl shadow-amber-500/10 transition-colors duration-200 cursor-pointer relative overflow-hidden space-y-4 group" title="לכל משימות הלשכה">
+<div class="absolute -left-10 -top-10 w-48 h-48 bg-amber-500/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between border-b border-amber-100 dark:border-amber-950/80 pb-3 relative z-10">
+<span class="text-xs text-amber-700 dark:text-amber-400 font-bold group-hover:translate-x-[-3px] transition-transform flex items-center gap-1">
+<span>לכל המשימות</span>
+<i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+</span>
+<div class="flex items-center gap-2.5">
+<span class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white">משימות לשכה דחופות</span>
+<div class="w-9 h-9 rounded-2xl bg-amber-500 text-white flex items-center justify-center font-bold shadow-md shadow-amber-500/25 group-hover:scale-110 group-hover:bg-amber-600 transition-colors duration-200">
+<i data-lucide="clock" class="w-4 h-4"></i>
+</div>
+</div>
+</div>
+<div id="overviewTasksList" class="space-y-2 text-xs relative z-10">
+</div>
+</div>
+<div onclick="switchTab('phonebook')" class="card-luxury btn-press rounded-2xl sm:rounded-3xl p-3 sm:p-5 bg-gradient-to-b from-cyan-50/70 via-white to-white dark:from-cyan-950/30 dark:via-slate-900 dark:to-slate-900 border-t-4 border-t-cyan-500 border-x border-b border-cyan-200/80 dark:border-cyan-800/60 hover:border-cyan-500 dark:hover:border-cyan-400 shadow-sm hover:shadow-xl shadow-cyan-500/10 transition-colors duration-200 cursor-pointer relative overflow-hidden space-y-4 group" title="לאלפון החטיבה המלא">
+<div class="absolute -left-10 -top-10 w-48 h-48 bg-cyan-500/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between border-b border-cyan-100 dark:border-cyan-950/80 pb-3 relative z-10">
+<span class="text-xs text-cyan-700 dark:text-cyan-400 font-bold group-hover:translate-x-[-3px] transition-transform flex items-center gap-1">
+<span>לאלפון המלא</span>
+<i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+</span>
+<div class="flex items-center gap-2.5">
+<span class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white">פיקוד בכיר ומזכירות</span>
+<div class="w-9 h-9 rounded-2xl bg-cyan-500 text-white flex items-center justify-center font-bold shadow-md shadow-cyan-500/25 group-hover:scale-110 group-hover:bg-cyan-600 transition-colors duration-200">
+<i data-lucide="book-open" class="w-4 h-4"></i>
+</div>
+</div>
+</div>
+<div id="overviewKeyContactsList" class="space-y-2 text-xs relative z-10">
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
+<div id="overviewNextEventWidget" onclick="onOverviewNextEventClick()" class="card-luxury btn-press rounded-2xl sm:rounded-3xl p-3 sm:p-5 bg-gradient-to-b from-indigo-50/70 via-white to-white dark:from-indigo-950/40 dark:via-slate-900 dark:to-slate-900 border-t-4 border-t-indigo-500 border-x border-b border-indigo-200/80 dark:border-indigo-800/60 hover:border-indigo-500 dark:hover:border-indigo-400 shadow-sm hover:shadow-xl shadow-indigo-500/10 transition-colors duration-200 cursor-pointer group relative overflow-hidden flex flex-col justify-between space-y-4" title="לחץ למעבר ישיר לאישורי ההגעה של דיון זה">
+<div class="absolute -left-10 -top-10 w-48 h-48 bg-indigo-500/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="space-y-3 relative z-10">
+<div class="flex items-center justify-between gap-2 border-b border-indigo-100 dark:border-indigo-950/80 pb-3">
+<span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 group-hover:translate-x-[-3px] transition-transform flex items-center gap-1">
+<span>אישורי הגעה</span>
+<i data-lucide="arrow-left" class="w-4 h-4"></i>
+</span>
+<div class="flex items-center gap-2.5">
+<div>
+<h4 class="font-black text-sm text-slate-900 dark:text-white flex items-center gap-1.5 justify-end">
+<span>האירוע הקרוב בלו״ז החטיבה</span>
+</h4>
+<span id="overviewNextEventDDay" class="text-[11px] text-indigo-600 dark:text-indigo-400 font-bold">טוען נתונים...</span>
+</div>
+<div class="w-10 h-10 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-bold shadow-md shadow-indigo-600/25 group-hover:scale-110 group-hover:bg-indigo-700 transition-colors duration-200">
+<i data-lucide="calendar-clock" class="w-5 h-5"></i>
+</div>
+</div>
+</div>
+<div id="overviewNextEventContent" class="space-y-3 mt-3">
+<div class="space-y-3">
+<div class="space-y-1.5">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-blue-100 text-blue-900 border-blue-400 dark:bg-blue-950/70 dark:text-blue-200">
+דיון ואישורים
+</span>
+<span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800/60">
+אירוע קרוב בלו״ז
+</span>
+</div>
+<strong class="block font-black text-base sm:text-lg text-slate-900 dark:text-white leading-snug">
+מפגש הכנה לתרגיל הקפצה – מפח״ט מצומצם ופורום גדוד 1873
+</strong>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-300">
+<div class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60">
+<i data-lucide="clock" class="w-4 h-4 text-indigo-500 shrink-0"></i>
+<span class="font-bold text-slate-800 dark:text-slate-200">19:00 - 20:30</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60">
+<i data-lucide="map-pin" class="w-4 h-4 text-slate-700 dark:text-slate-300 shrink-0"></i>
+<span class="font-medium truncate">שטראוס</span>
+</div>
+</div>
+<div class="p-3 rounded-2xl bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200/70 dark:border-indigo-900/50 space-y-2">
+<div class="flex items-center justify-between text-xs font-black">
+<span class="text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+<i data-lucide="user-check" class="w-4 h-4 text-indigo-600 dark:text-indigo-400"></i>
+<span>אישורי הגעה (קוורום: 50%)</span>
+</span>
+<span class="text-indigo-700 dark:text-indigo-300 font-extrabold">4 מתוך 8 אישרו</span>
+</div>
+<div class="w-full h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden flex shadow-inner">
+<div class="bg-emerald-500 h-full transition-colors" style="width: 50%"></div>
+<div class="bg-amber-400 h-full transition-colors" style="width: 37%"></div>
+<div class="bg-rose-500 h-full transition-colors" style="width: 13%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="overviewNextEventFooter" class="pt-3 border-t border-indigo-100/60 dark:border-slate-800/80 flex items-center justify-between text-xs relative z-10">
+</div>
+</div>
+<div id="overviewCalendarDayCard" onclick="switchTab('calendar')" class="card-luxury btn-press rounded-2xl sm:rounded-3xl p-3 sm:p-5 bg-gradient-to-b from-emerald-50/70 via-white to-white dark:from-emerald-950/40 dark:via-slate-900 dark:to-slate-900 border-t-4 border-t-emerald-500 border-x border-b border-emerald-200/80 dark:border-emerald-800/60 hover:border-emerald-500 dark:hover:border-emerald-400 shadow-sm hover:shadow-xl shadow-emerald-500/10 transition-colors duration-200 cursor-pointer group relative overflow-hidden flex flex-col justify-between space-y-4" title="לחץ לפתיחת יומן החטיבה המלא">
+<div class="absolute -right-10 -top-10 w-48 h-48 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="space-y-3 relative z-10">
+<div class="flex items-center justify-between gap-2 border-b border-emerald-100 dark:border-emerald-950/80 pb-3">
+<span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-[-3px] transition-transform flex items-center gap-1">
+<span>פתיחת יומן מלא</span>
+<i data-lucide="arrow-left" class="w-4 h-4"></i>
+</span>
+<div class="flex items-center gap-2.5">
+<div>
+<h4 class="font-black text-sm text-slate-900 dark:text-white flex items-center gap-1.5 justify-end">
+<span>יומן החטיבה • היום הקרוב</span>
+</h4>
+<span id="overviewTodayDateString" class="text-[11px] text-emerald-600 dark:text-emerald-400 font-bold">טוען תאריך...</span>
+</div>
+<div class="w-10 h-10 rounded-2xl bg-emerald-500 text-white flex items-center justify-center font-bold shadow-md shadow-emerald-500/25 group-hover:scale-110 group-hover:bg-emerald-600 transition-colors duration-200">
+<i data-lucide="calendar" class="w-5 h-5"></i>
+</div>
+</div>
+</div>
+<div id="overviewTodayEventsList" class="space-y-2 mt-3 min-h-[120px]">
+</div>
+</div>
+<div id="overviewTodayFooter" class="pt-3 border-t border-emerald-100/60 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-700 dark:text-slate-300 relative z-10">
+</div>
+</div>
+</div>
+<div id="mobileGuideDashboardCard" class="card-luxury rounded-2xl p-3 sm:p-4 border border-emerald-500/30 shadow-lg relative overflow-hidden bg-gradient-to-br from-emerald-500/5 via-teal-500/5 to-slate-900/5 dark:from-emerald-950/40 dark:via-slate-900/60 dark:to-slate-900/90">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center shrink-0 shadow-md shadow-emerald-600/20">
+<i data-lucide="smartphone" class="w-6 h-6"></i>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-black text-base text-slate-900 dark:text-white">מדריך שימוש והתראות בנייד</h3>
+<span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">טלפון ומסך נעילה</span>
+</div>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-1">
+כך תפעיל התראות ורטט לפני פגישות, תוסיף את המערכת למסך הבית כאפליקציה ותסנכרן את לוח השנה 187 ישירות למכשיר.
+</p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+<button onclick="openMobileGuideModal('notif')" class="btn-press px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black shadow-md shadow-emerald-600/20 flex items-center gap-1.5 cursor-pointer">
+<i data-lucide="book-open" class="w-4 h-4"></i>
+<span>פתח מדריך מלא 📱</span>
+</button>
+<button onclick="openNotificationSettingsModal()" class="btn-press px-3 py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 dark:text-amber-400 border border-amber-500/30 text-xs font-bold flex items-center gap-1 cursor-pointer" title="הגדרות התראה" aria-label="הגדרות התראה">
+<i data-lucide="bell" class="w-4 h-4 text-amber-500"></i>
+<span>הגדרות</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4 pt-4 border-t border-slate-200/80 dark:border-slate-800/80 text-xs">
+<div class="p-3.5 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 space-y-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-black text-slate-900 dark:text-white flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 flex items-center justify-center text-[11px] font-black">1</span>
+הפעלת התראות ורטט
+</span>
+<i data-lucide="bell-ring" class="w-4 h-4 text-amber-500"></i>
+</div>
+<p class="text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed">
+מאשרים התראות בדפדפן. הטלפון ירטוט ויקפיץ תזכורת 15 דקות לפני כל פגישה, ב-08:00 (תדריך) ובמשימות דחופות.
+</p>
+<div class="pt-1 flex items-center gap-2">
+<button onclick="requestMobileNotificationPermission()" class="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] cursor-pointer">
+אישור התראות
+</button>
+<button onclick="testMobileNotification()" class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-bold text-[10px] cursor-pointer">
+בדיקה 📲
+</button>
+</div>
+</div>
+<div class="p-3.5 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 space-y-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-black text-slate-900 dark:text-white flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-400 flex items-center justify-center text-[11px] font-black">2</span>
+הוספה למסך הבית (PWA)
+</span>
+<i data-lucide="plus-square" class="w-4 h-4 text-blue-500"></i>
+</div>
+<p class="text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed">
+הופך את האתר לאפליקציה מלאה במסך מלא. באייפון: שיתוף &larr; "הוסף למסך הבית". באנדרואיד: 3 נקודות &larr; "התקן אפליקציה".
+</p>
+<div class="pt-1">
+<button onclick="openMobileGuideModal('pwa')" class="px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 font-bold text-[10px] cursor-pointer">
+מדריך שלב-אחר-שלב 📱
+</button>
+</div>
+</div>
+<div class="p-3.5 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 space-y-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-black text-slate-900 dark:text-white flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-400 flex items-center justify-center text-[11px] font-black">3</span>
+סנכרון לוח השנה בטלפון
+</span>
+<i data-lucide="calendar" class="w-4 h-4 text-purple-500"></i>
+</div>
+<p class="text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed">
+חיבור יומן החטיבה (187) ל-Google / Apple Calendar במכשיר לקבלת צלצול מובנה של מערכת ההפעלה גם כשהדפדפן סגור.
+</p>
+<div class="pt-1">
+<button onclick="subscribeNativeCalendar()" class="px-2.5 py-1 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-bold text-[10px] cursor-pointer">
+חיבור יומן 187 לטלפון 📅
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabContentCalendar" class="hidden space-y-5 sm:space-y-6" data-lazy-tab="calendar"></div>
+<div id="tabContentRsvp" class="hidden space-y-6" data-lazy-tab="rsvp"></div>
+<div id="tabContentPhonebook" class="hidden space-y-3.5 sm:space-y-6" data-lazy-tab="phonebook"></div>
+<div id="tabContentTasks" class="hidden space-y-6" data-lazy-tab="tasks"></div>
+<div id="tabContentTemplates" class="hidden space-y-6" data-lazy-tab="templates"></div>
+</main>
+<div id="lazyModalsMountRoot"></div>
+<nav id="mobileBottomNav" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/98 dark:bg-slate-900/98 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-1 py-1 shadow-2xl flex items-center justify-around text-[10px] safe-area-pb">
+<button id="mobileNavTabOverview" onclick="switchTab('overview')" class="flex-1 flex flex-col items-center justify-center py-1 rounded-xl text-emerald-600 dark:text-emerald-400 font-extrabold transition-colors duration-150 cursor-pointer group active:scale-95" title="מסך הבית" aria-label="מסך הבית">
+<i data-lucide="home" class="w-4 h-4 mb-0.5 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">ראשי</span>
+</button>
+<button id="mobileNavTabCalendar" onclick="switchTab('calendar')" class="flex-1 flex flex-col items-center justify-center py-1 rounded-xl text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:text-slate-700 dark:text-slate-300 dark:hover:text-emerald-300 font-semibold transition-colors duration-150 cursor-pointer group active:scale-95" title="יומן חטיבה" aria-label="יומן חטיבה">
+<i data-lucide="calendar" class="w-4 h-4 mb-0.5 text-emerald-500 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">יומן</span>
+</button>
+<button id="mobileNavTabRsvp" onclick="switchTab('rsvp')" class="flex-1 flex flex-col items-center justify-center py-1 rounded-xl text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:text-slate-700 dark:text-slate-300 dark:hover:text-indigo-300 font-semibold transition-colors duration-150 cursor-pointer relative group active:scale-95" title="אישורי הגעה" aria-label="אישורי הגעה">
+<i data-lucide="user-check" class="w-4 h-4 mb-0.5 text-indigo-500 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">אישורים</span>
+<span id="mobileRsvpPendingDot" class="w-1.5 h-1.5 rounded-full bg-amber-500 absolute top-0.5 right-2 animate-pulse"></span>
+</button>
+<button id="mobileNavTabPhonebook" onclick="switchTab('phonebook')" class="flex-1 flex flex-col items-center justify-center py-1 rounded-xl text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:text-slate-700 dark:text-slate-300 dark:hover:text-cyan-300 font-semibold transition-colors duration-150 cursor-pointer group active:scale-95" title="אלפון מפקדים" aria-label="אלפון מפקדים">
+<i data-lucide="book-open" class="w-4 h-4 mb-0.5 text-cyan-500 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">אלפון</span>
+</button>
+<button id="mobileNavTabTasks" onclick="switchTab('tasks')" class="flex-1 flex flex-col items-center justify-center py-1 rounded-xl text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:text-slate-700 dark:text-slate-300 dark:hover:text-amber-300 font-semibold transition-colors duration-150 cursor-pointer group active:scale-95" title="משימות לשכה" aria-label="משימות לשכה">
+<i data-lucide="check-square" class="w-4 h-4 mb-0.5 text-amber-500 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">משימות</span>
+</button>
+<button id="mobileNavTabTemplates" onclick="switchTab('templates')" class="flex-1 flex flex-col items-center justify-center py-1 rounded-xl text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:text-slate-700 dark:text-slate-300 dark:hover:text-purple-300 font-semibold transition-colors duration-150 cursor-pointer group active:scale-95" title="תבניות מהירות" aria-label="תבניות מהירות">
+<i data-lucide="message-square-text" class="w-4 h-4 mb-0.5 text-purple-500 group-hover:scale-110 transition-transform"></i>
+<span class="truncate">תבניות</span>
+</button>
+</nav>
+<script src="./app.js" defer></script>
+</body>
+</html>
