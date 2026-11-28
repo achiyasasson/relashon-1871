@@ -240,6 +240,98 @@ html.dark .lamp-cord-beads{stroke:#cbd5e1;}
 #lampCordHint{position:absolute;top:76px;left:56px;white-space:nowrap;pointer-events:none;opacity:0;transform:translateX(-4px);transition:opacity 0.2s ease,transform 0.2s ease;}
 #lampCordWrap.hint-show #lampCordHint{opacity:1;transform:translateX(0);}
 
+
+/* === v3.3.0 Gimmicks & Micro-Interactions === */
+/* 5. Header Sky Ambience (Sun / Moon & Twinkling Stars) */
+#headerSkyAmbience{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+.sky-star{position:absolute;border-radius:9999px;background:#fef08a;opacity:0;animation:starTwinkle 3.2s ease-in-out infinite;}
+html.dark .sky-star, #headerSkyAmbience.is-night .sky-star{opacity:0.85;}
+@keyframes starTwinkle{0%,100%{opacity:0.2;transform:scale(0.8);}50%{opacity:0.95;transform:scale(1.3);}}
+.sky-sun-orb{position:absolute;top:-18px;left:22%;width:84px;height:84px;border-radius:9999px;background:radial-gradient(circle,rgba(253,224,71,0.34) 0%,rgba(251,191,36,0.12) 48%,transparent 72%);animation:sunFloat 6s ease-in-out infinite;opacity:0;transition:opacity 0.5s ease;}
+#headerSkyAmbience.is-day .sky-sun-orb{opacity:1;}
+html.dark #headerSkyAmbience .sky-sun-orb{opacity:0 !important;}
+@keyframes sunFloat{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(3px) scale(1.07);}}
+
+/* 14. Flickering Shabbat Candles */
+#shabbatCandlesBadge{display:none;align-items:flex-end;gap:2px;margin-right:4px;}
+#shabbatCandlesBadge.active{display:inline-flex;}
+.candle-flame{transform-origin:50% 85%;animation:candleFlicker 1.3s ease-in-out infinite alternate;}
+.candle-flame-2{animation-delay:0.45s;}
+@keyframes candleFlicker{0%{transform:scaleY(0.92) rotate(-3deg);opacity:0.88;}50%{transform:scaleY(1.08) rotate(2deg);opacity:1;}100%{transform:scaleY(0.96) rotate(-1deg);opacity:0.92;}}
+
+/* 15. Typewriter Greeting Cursor */
+.typewriter-caret{display:inline-block;width:2px;height:0.85em;background:currentColor;margin-right:2px;vertical-align:middle;animation:caretBlink 0.7s steps(2) infinite;}
+@keyframes caretBlink{0%,100%{opacity:1;}50%{opacity:0;}}
+
+/* 1. Thursday-Friday Shabbat Pill + Floating Emojis */
+.shabbat-float-emoji{position:fixed;pointer-events:none;z-index:9990;font-size:20px;animation:floatUpFade 1.5s cubic-bezier(0.2,0.8,0.2,1) forwards;}
+@keyframes floatUpFade{0%{opacity:1;transform:translateY(0) scale(0.75) rotate(0deg);}100%{opacity:0;transform:translateY(-78px) scale(1.25) rotate(14deg);}}
+
+/* 2. Sync Paper Airplane */
+#syncPaperPlane{position:fixed;top:16px;right:-60px;z-index:9980;pointer-events:none;opacity:0;}
+#syncPaperPlane.flying{animation:paperPlaneFly 1.35s cubic-bezier(0.25,0.65,0.35,1) forwards;}
+@keyframes paperPlaneFly{0%{opacity:0;transform:translate(0,0) rotate(-14deg) scale(0.85);}12%{opacity:1;}50%{transform:translate(-52vw,16px) rotate(-6deg) scale(1.08);}88%{opacity:1;}100%{opacity:0;transform:translate(-108vw,-12px) rotate(-18deg) scale(0.9);}}
+
+/* 3. Radar Pulse (<15 min to meeting) */
+.radar-pulse-active{position:relative;border-color:rgba(16,185,129,0.75) !important;animation:radarCardPulse 2.2s ease-out infinite;}
+@keyframes radarCardPulse{0%{box-shadow:0 0 0 0 rgba(16,185,129,0.45);}70%{box-shadow:0 0 0 12px rgba(16,185,129,0);}100%{box-shadow:0 0 0 0 rgba(16,185,129,0);}}
+
+/* 4. Corner Sticky Note (Post-It) */
+#quickPostItWrap{position:fixed;bottom:76px;left:14px;z-index:44;}
+@media(min-width:640px){#quickPostItWrap{bottom:20px;left:20px;}}
+#quickPostItTab{transform:rotate(-3deg);transition:transform 0.25s cubic-bezier(0.2,0.8,0.2,1),box-shadow 0.2s ease;}
+#quickPostItTab:hover{transform:rotate(0deg) scale(1.06);}
+#quickPostItCard{width:236px;background:linear-gradient(155deg,#fef08a 0%,#fde047 100%);color:#422006;border:1px solid #eab308;box-shadow:0 14px 32px -8px rgba(161,98,7,0.38),0 2px 6px rgba(0,0,0,0.12);transform-origin:top right;animation:postItSway 5s ease-in-out infinite;}
+@keyframes postItSway{0%,100%{transform:rotate(-1.2deg);}50%{transform:rotate(1.2deg);}}
+#quickPostItCard.tearing{animation:postItTearOff 0.52s cubic-bezier(0.4,0,0.2,1) forwards !important;}
+@keyframes postItTearOff{0%{transform:rotate(0deg) scale(1);opacity:1;}35%{transform:rotate(12deg) translateY(8px) scale(0.95);opacity:0.95;}100%{transform:rotate(28deg) translate(90px,95px) scale(0.18);opacity:0;}}
+
+/* 6. Bouncy Trash Bin */
+#bouncyTrashDock{position:fixed;bottom:-90px;left:50%;transform:translateX(-50%);z-index:9985;pointer-events:none;transition:bottom 0.28s cubic-bezier(0.2,0.9,0.3,1.2);}
+#bouncyTrashDock.show{bottom:24px;}
+#bouncyTrashLid{transform-origin:15% 85%;transition:transform 0.18s ease;}
+#bouncyTrashDock.open #bouncyTrashLid{transform:rotate(-38deg) translateY(-2px);}
+#bouncyTrashDock.gulp{animation:trashGulp 0.35s ease;}
+@keyframes trashGulp{0%{transform:translateX(-50%) scale(1);}45%{transform:translateX(-50%) scale(1.22,0.88);}100%{transform:translateX(-50%) scale(1);}}
+.flying-trash-chip{position:fixed;z-index:9986;pointer-events:none;padding:6px 12px;border-radius:12px;background:#fef08a;color:#422006;font-size:11px;font-weight:800;box-shadow:0 8px 20px rgba(0,0,0,0.2);transition:all 0.48s cubic-bezier(0.35,0.05,0.65,0.95);}
+
+/* 7. 3D Tilt + Glass Glare on Home KPI Bubbles */
+.tilt-card-3d{transform-style:preserve-3d;will-change:transform;transition:transform 0.2s cubic-bezier(0.2,0.8,0.2,1),box-shadow 0.25s ease;}
+.tilt-card-3d::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity 0.25s ease;background:radial-gradient(240px circle at var(--glare-x,50%) var(--glare-y,50%),rgba(255,255,255,0.32),transparent 60%);z-index:3;}
+.dark .tilt-card-3d::after{background:radial-gradient(240px circle at var(--glare-x,50%) var(--glare-y,50%),rgba(255,255,255,0.12),transparent 60%);}
+.tilt-card-3d.tilting::after{opacity:1;}
+
+/* 8. Pen Strikethrough Draw Animation */
+.task-strike-draw{position:relative;}
+.task-strike-draw::after{content:'';position:absolute;right:0;top:52%;height:2px;background:currentColor;width:100%;animation:drawStrikeLine 0.38s cubic-bezier(0.2,0.8,0.2,1) forwards;}
+@keyframes drawStrikeLine{from{width:0;}to{width:100%;}}
+
+/* 9. Clean Day Steaming Coffee Animation */
+.coffee-steam-1{animation:steamRise 2.2s ease-in-out infinite;}
+.coffee-steam-2{animation:steamRise 2.2s ease-in-out 0.65s infinite;}
+.coffee-steam-3{animation:steamRise 2.2s ease-in-out 1.2s infinite;}
+@keyframes steamRise{0%{opacity:0;transform:translateY(4px) scaleY(0.8);}45%{opacity:0.85;}100%{opacity:0;transform:translateY(-7px) scaleY(1.15);}}
+
+/* 10. Copy Sparkle Pop */
+.copy-sparkle-pill{position:fixed;z-index:9992;pointer-events:none;transform:translate(-50%,-100%);animation:copyPillFloat 0.95s cubic-bezier(0.2,0.85,0.25,1) forwards;}
+@keyframes copyPillFloat{0%{opacity:0;transform:translate(-50%,-40%) scale(0.75);}22%{opacity:1;transform:translate(-50%,-115%) scale(1.06);}100%{opacity:0;transform:translate(-50%,-175%) scale(0.95);}}
+.copy-sparkle-dot{position:fixed;z-index:9991;width:6px;height:6px;border-radius:9999px;pointer-events:none;animation:sparkleBurst 0.65s cubic-bezier(0.15,0.85,0.25,1) forwards;}
+@keyframes sparkleBurst{0%{opacity:1;transform:translate(0,0) scale(1);}100%{opacity:0;transform:translate(var(--sx),var(--sy)) scale(0.1);}}
+
+/* 11. Dark Mode Cursor Lantern */
+#darkCursorLantern{position:fixed;inset:0;z-index:25;pointer-events:none;opacity:0;transition:opacity 0.4s ease;background:radial-gradient(320px circle at var(--mx,-500px) var(--my,-500px),rgba(99,102,241,0.10),rgba(16,185,129,0.05) 45%,transparent 72%);}
+html.dark #darkCursorLantern{opacity:1;}
+
+/* 12. 100% RSVP Ready-for-Takeoff Shimmer */
+.rsvp-bar-shimmer{background:linear-gradient(90deg,#10b981 0%,#34d399 28%,#fbbf24 50%,#34d399 72%,#10b981 100%) !important;background-size:220% 100% !important;animation:rsvpShimmerSlide 2.2s linear infinite;box-shadow:0 0 12px rgba(16,185,129,0.55);}
+@keyframes rsvpShimmerSlide{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+
+/* 13. Calendar Page-Turn Slide */
+.cal-page-next{animation:calSlideFromLeft 0.28s cubic-bezier(0.2,0.8,0.2,1);}
+.cal-page-prev{animation:calSlideFromRight 0.28s cubic-bezier(0.2,0.8,0.2,1);}
+@keyframes calSlideFromLeft{0%{opacity:0.25;transform:translateX(-28px);}100%{opacity:1;transform:translateX(0);}}
+@keyframes calSlideFromRight{0%{opacity:0.25;transform:translateX(28px);}100%{opacity:1;transform:translateX(0);}}
+
 </style>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
@@ -298,7 +390,7 @@ html.dark .lamp-cord-beads{stroke:#cbd5e1;}
 <span id="lockScreenErrorText">שגיאת התחברות</span>
 </p>
 <div class="text-[10px] text-slate-400 pt-2 border-t border-slate-800">
-גרסה v3.2.2 • נעול לחשבון מורשה בלבד (Firebase Auth + Firestore Rules)
+גרסה v3.3.0 • נעול לחשבון מורשה בלבד (Firebase Auth + Firestore Rules)
 </div>
 </div>
 </div>
@@ -316,14 +408,33 @@ html.dark .lamp-cord-beads{stroke:#cbd5e1;}
 </div>
 
 <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-800/80 shadow-sm transition-colors duration-200">
-<div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between">
+<div id="headerSkyAmbience" aria-hidden="true">
+<div class="sky-sun-orb"></div>
+<span class="sky-star" style="top:18%;left:14%;width:3px;height:3px;animation-delay:0.2s;"></span>
+<span class="sky-star" style="top:42%;left:24%;width:2px;height:2px;animation-delay:1.1s;"></span>
+<span class="sky-star" style="top:24%;left:38%;width:3.5px;height:3.5px;animation-delay:0.6s;"></span>
+<span class="sky-star" style="top:64%;left:48%;width:2px;height:2px;animation-delay:1.9s;"></span>
+<span class="sky-star" style="top:20%;left:62%;width:3px;height:3px;animation-delay:0.9s;"></span>
+<span class="sky-star" style="top:52%;left:73%;width:2.5px;height:2.5px;animation-delay:2.1s;"></span>
+<span class="sky-star" style="top:28%;left:84%;width:2px;height:2px;animation-delay:1.5s;"></span>
+</div>
+<div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between relative z-10">
 <div class="flex items-center gap-2 sm:gap-3.5">
 <div class="relative p-1 bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 rounded-xl sm:rounded-2xl border-2 border-emerald-500/50 shadow-md cursor-pointer shrink-0 hover:scale-105 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/20 transition-colors duration-200 group" onclick="openEmblemModal()" title="סמל חטיבת יהונתן">
-<img src="./icon-192.png" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c8/%D7%A1%D7%9E%D7%9C_%D7%97%D7%98%D7%99%D7%91%D7%AA_%D7%99%D7%94%D7%95%D7%A0%D7%AA%D7%9F.jpg'" referrerpolicy="no-referrer" alt="סמל חטיבת יהונתן" class="h-9 w-9 sm:h-11 sm:w-11 object-contain rounded-lg sm:rounded-xl group-hover:rotate-1 transition-transform" width="44" height="44">
+<img src="./icon-192.png" alt="סמל חטיבת יהונתן" class="h-9 w-9 sm:h-11 sm:w-11 object-contain rounded-lg sm:rounded-xl group-hover:rotate-1 transition-transform" width="44" height="44">
 </div>
 <div>
 <div class="flex items-center gap-1.5 sm:gap-2">
-<h1 class="font-black text-base sm:text-lg text-slate-900 dark:text-white tracking-tight leading-none">
+<span id="shabbatCandlesBadge" title="שבת שלום / חג שמח!" aria-label="נרות שבת">
+<svg width="22" height="26" viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg">
+<g class="candle-flame"><path d="M7 9 C5.5 6.5 6.3 3.5 7.5 2 C8.7 3.5 9.5 6.5 8 9 Z" fill="#f59e0b"/><path d="M7.5 8.5 C6.8 7 7 5.2 7.5 4.2 C8 5.2 8.2 7 7.5 8.5 Z" fill="#fef08a"/></g>
+<rect x="5" y="10" width="5" height="14" rx="1.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="4" y="23.5" width="7" height="2.5" rx="1" fill="#94a3b8"/>
+<g class="candle-flame candle-flame-2"><path d="M16 11 C14.5 8.5 15.3 5.5 16.5 4 C17.7 5.5 18.5 8.5 17 11 Z" fill="#f59e0b"/><path d="M16.5 10.5 C15.8 9 16 7.2 16.5 6.2 C17 7.2 17.2 9 16.5 10.5 Z" fill="#fef08a"/></g>
+<rect x="14" y="12" width="5" height="12" rx="1.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="13" y="23.5" width="7" height="2.5" rx="1" fill="#94a3b8"/>
+</svg>
+</span><h1 class="font-black text-base sm:text-lg text-slate-900 dark:text-white tracking-tight leading-none">
 רלש״ון 187
 </h1>
 <span class="inline-block text-[10px] font-extrabold px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 leading-none shadow-xs">
@@ -512,12 +623,13 @@ html.dark .lamp-cord-beads{stroke:#cbd5e1;}
 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
 <div class="flex items-center gap-5">
 <div class="relative p-2 bg-white dark:bg-slate-800 rounded-3xl border-2 border-emerald-500/40 shadow-xl shadow-emerald-500/10 flex-shrink-0 cursor-pointer hover:scale-105 transition-transform" onclick="openEmblemModal()">
-<img src="./icon-192.png" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c8/%D7%A1%D7%9E%D7%9C_%D7%97%D7%98%D7%99%D7%91%D7%AA_%D7%99%D7%94%D7%95%D7%A0%D7%AA%D7%9F.jpg'" referrerpolicy="no-referrer" alt="סמל חטיבת יהונתן" class="h-11 w-11 sm:h-20 sm:w-auto sm:max-w-[76px] object-contain rounded-xl sm:rounded-2xl" width="76" height="76">
+<img src="./icon-192.png" alt="סמל חטיבת יהונתן" class="h-11 w-11 sm:h-20 sm:w-auto sm:max-w-[76px] object-contain rounded-xl sm:rounded-2xl" width="76" height="76">
 </div>
 <div>
 <div class="flex items-center gap-2">
 <h2 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight">מפקדת חטיבת יהונתן</h2>
 <span class="px-2.5 py-0.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-black">187</span>
+<button type="button" id="shabbatVibePill" onclick="triggerShabbatCoffeeBurst(event)" class="hidden btn-press px-2.5 py-0.5 rounded-full bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-950/80 dark:to-orange-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 text-[11px] font-black shadow-xs hover:scale-105 transition cursor-pointer items-center gap-1" title="לחץ לאווירת סופ״ש!"><span>אוטוטו שבת ☕</span></button>
 </div>
 <p class="text-sm text-slate-600 dark:text-slate-300 font-medium mt-1">
 עמדת רל״ש החטיבה • יומן יעד חטיבתי: <strong class="text-emerald-600 dark:text-emerald-400">187brigade@gmail.com</strong>
@@ -724,7 +836,7 @@ html.dark .lamp-cord-beads{stroke:#cbd5e1;}
 <span class="truncate">תבניות</span>
 </button>
 </nav>
-<script src="./app.js?v=3.2.2" defer></script>
+<script src="./app.js?v=3.3.0" defer></script>
 
 <div id="birthdayCelebrationModal" class="fixed inset-0 z-[9990] bg-slate-950/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto" onclick="closeBirthdayCelebrationModal()">
 <canvas id="birthdayFxCanvas" class="fixed inset-0 w-full h-full pointer-events-none z-[9991]"></canvas>
@@ -754,6 +866,54 @@ html.dark .lamp-cord-beads{stroke:#cbd5e1;}
 <button type="button" onclick="closeBirthdayCelebrationModal(); openBirthdaysInCalendar();" class="text-pink-300 hover:text-pink-200 font-bold underline decoration-dotted cursor-pointer">לכל ימי ההולדת ביומן 🎈</button>
 <button type="button" onclick="closeBirthdayCelebrationModal()" class="px-4 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 font-bold cursor-pointer">סגור</button>
 </div>
+</div>
+</div>
+
+
+<!-- Dark Mode Cursor Lantern (v3.3.0) -->
+<div id="darkCursorLantern" aria-hidden="true"></div>
+
+<!-- Sync Paper Airplane (v3.3.0) -->
+<div id="syncPaperPlane" aria-hidden="true">
+<svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 8L4 22L19 27L44 8Z" fill="#10b981" stroke="#065f46" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M44 8L19 27L24 41L44 8Z" fill="#34d399" stroke="#065f46" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M19 27L24 41L28 31L19 27Z" fill="#059669" stroke="#065f46" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>
+</div>
+
+<!-- Quick Corner Post-It Note (v3.3.0) -->
+<div id="quickPostItWrap">
+<button type="button" id="quickPostItTab" onclick="toggleQuickPostIt()" class="px-3 py-1.5 rounded-xl bg-amber-300 hover:bg-amber-200 text-amber-950 font-black text-xs shadow-lg border border-amber-400/90 flex items-center gap-1.5 cursor-pointer" title="פתקית תזכורת מהירה">
+<span>📌</span>
+<span id="quickPostItTabLabel">פתקית</span>
+</button>
+<div id="quickPostItCard" class="hidden rounded-2xl p-3 space-y-2 relative">
+<div class="flex items-center justify-between border-b border-amber-500/30 pb-1.5">
+<span class="text-[11px] font-black text-amber-950 flex items-center gap-1"><span>📌</span><span>תזכורת מהירה</span></span>
+<div class="flex items-center gap-1">
+<button type="button" onclick="tearQuickPostIt(event)" class="px-2 py-0.5 rounded-lg bg-amber-950/10 hover:bg-rose-600 hover:text-white text-amber-950 text-[10px] font-black transition cursor-pointer" title="תלוש וזרוק לפח">תלוש ✓</button>
+<button type="button" onclick="toggleQuickPostIt()" class="w-5 h-5 rounded-md hover:bg-amber-950/10 text-amber-950 flex items-center justify-center text-xs font-black cursor-pointer" title="מזער">−</button>
+</div>
+</div>
+<textarea id="quickPostItInput" oninput="saveQuickPostItText(this.value)" rows="3" placeholder="למשל: להזכיר למח״ט לחתום על..." class="w-full bg-transparent text-xs font-bold text-amber-950 placeholder-amber-800/60 resize-none focus:outline-none focus:shadow-none border-0 p-0 leading-relaxed"></textarea>
+</div>
+</div>
+
+<!-- Bouncy Trash Bin Dock (v3.3.0) -->
+<div id="bouncyTrashDock" aria-hidden="true">
+<div class="px-4 py-2.5 rounded-2xl bg-slate-900/92 dark:bg-slate-800/95 border border-white/15 shadow-2xl flex items-center gap-2 text-white">
+<svg width="26" height="28" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="bouncyTrashLid">
+<rect x="4" y="6" width="20" height="3" rx="1.5" fill="#f43f5e"/>
+<path d="M10 6V4C10 3.2 10.7 2.5 11.5 2.5H16.5C17.3 2.5 18 3.2 18 4V6" stroke="#f43f5e" stroke-width="2" stroke-linecap="round"/>
+</g>
+<path d="M6.5 10.5H21.5L20 26C19.9 27.1 19 28 17.9 28H10.1C9 28 8.1 27.1 8 26L6.5 10.5Z" fill="#334155" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="11" y1="14" x2="11.5" y2="24" stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="14" y1="14" x2="14" y2="24" stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="17" y1="14" x2="16.5" y2="24" stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
+<span class="text-xs font-black">נמחק!</span>
 </div>
 </div>
 
