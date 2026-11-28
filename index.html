@@ -222,6 +222,24 @@ main{overflow-x:hidden !important;padding-left:0.5rem !important;padding-right:0
 }
 #tacticalLockScreen:not(.hidden){position:fixed !important;inset:0 !important;width:100vw !important;height:100vh !important;height:100dvh !important;z-index:9999 !important;display:flex !important;align-items:center !important;justify-content:center !important;padding:1rem !important;overflow-y:auto !important;margin:0 !important;}
 #tacticalLockScreen > .auth-card{margin:auto !important;width:100% !important;max-width:24rem !important;border-radius:1.5rem !important;}
+
+#lampCordWrap{position:absolute;top:100%;left:10px;width:72px;height:170px;z-index:45;pointer-events:none;user-select:none;-webkit-user-select:none;touch-action:none;overflow:visible;}
+@media(min-width:640px){#lampCordWrap{left:26px;}}
+#lampCordSvg{width:100%;height:100%;overflow:visible;pointer-events:none;}
+#lampCordHit{cursor:grab;pointer-events:auto;touch-action:none;}
+#lampCordHit:active{cursor:grabbing;}
+.lamp-bulb-glow{transition:filter 0.35s ease,fill 0.35s ease,stroke 0.35s ease;}
+html:not(.dark) .lamp-bulb-body{fill:url(#lampBulbLightGrad);stroke:#d97706;filter:drop-shadow(0 0 8px rgba(251,191,36,0.85));}
+html.dark .lamp-bulb-body{fill:url(#lampBulbDarkGrad);stroke:#818cf8;filter:drop-shadow(0 0 7px rgba(129,140,248,0.65));}
+html:not(.dark) .lamp-cord-line{stroke:#b45309;}
+html.dark .lamp-cord-line{stroke:#94a3b8;}
+html:not(.dark) .lamp-cord-beads{stroke:#f59e0b;}
+html.dark .lamp-cord-beads{stroke:#cbd5e1;}
+#lampCordFlash{opacity:0;pointer-events:none;transition:opacity 0.25s ease;}
+#lampCordFlash.active{opacity:0.95;}
+#lampCordHint{position:absolute;top:76px;left:56px;white-space:nowrap;pointer-events:none;opacity:0;transform:translateX(-4px);transition:opacity 0.2s ease,transform 0.2s ease;}
+#lampCordWrap.hint-show #lampCordHint{opacity:1;transform:translateX(0);}
+
 </style>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
@@ -280,7 +298,7 @@ main{overflow-x:hidden !important;padding-left:0.5rem !important;padding-right:0
 <span id="lockScreenErrorText">שגיאת התחברות</span>
 </p>
 <div class="text-[10px] text-slate-400 pt-2 border-t border-slate-800">
-גרסה v3.2.1 • נעול לחשבון מורשה בלבד (Firebase Auth + Firestore Rules)
+גרסה v3.2.2 • נעול לחשבון מורשה בלבד (Firebase Auth + Firestore Rules)
 </div>
 </div>
 </div>
@@ -296,6 +314,7 @@ main{overflow-x:hidden !important;padding-left:0.5rem !important;padding-right:0
 <i data-lucide="x" class="w-3 h-3"></i>
 </button>
 </div>
+
 <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-800/80 shadow-sm transition-colors duration-200">
 <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between">
 <div class="flex items-center gap-2 sm:gap-3.5">
@@ -427,6 +446,46 @@ main{overflow-x:hidden !important;padding-left:0.5rem !important;padding-right:0
 <i data-lucide="message-square-text" class="w-4 h-4 text-purple-500 group-hover:scale-110 transition-transform"></i>
 <span class="truncate">תבניות</span>
 </button>
+</div>
+<div id="lampCordWrap" aria-label="חוט מנורה להחלפת מצב תצוגה">
+<svg id="lampCordSvg" viewBox="0 0 72 190" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="lampBulbLightGrad" cx="40%" cy="35%" r="65%">
+<stop offset="0%" stop-color="#fef9c3"/>
+<stop offset="55%" stop-color="#fbbf24"/>
+<stop offset="100%" stop-color="#d97706"/>
+</radialGradient>
+<radialGradient id="lampBulbDarkGrad" cx="40%" cy="35%" r="65%">
+<stop offset="0%" stop-color="#e0e7ff"/>
+<stop offset="55%" stop-color="#4f46e5"/>
+<stop offset="100%" stop-color="#1e1b4b"/>
+</radialGradient>
+<radialGradient id="lampFlashGrad" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#fef08a" stop-opacity="0.95"/>
+<stop offset="60%" stop-color="#fbbf24" stop-opacity="0.35"/>
+<stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<!-- Ceiling/top mount cap -->
+<rect x="27" y="0" width="18" height="6" rx="2" fill="#475569"/>
+<circle cx="36" cy="6" r="3" fill="#94a3b8"/>
+<!-- Flexible lamp cord path + beaded chain -->
+<path id="lampCordPath" class="lamp-cord-line" d="M 36 6 Q 36 45 36 86" fill="none" stroke-width="2.4" stroke-linecap="round"/>
+<path id="lampCordBeads" class="lamp-cord-beads" d="M 36 6 Q 36 45 36 86" fill="none" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="0.5 7"/>
+<!-- Hanging knob / bulb assembly -->
+<g id="lampCordKnob" transform="translate(36, 86)">
+<circle id="lampCordFlash" cx="0" cy="14" r="30" fill="url(#lampFlashGrad)"/>
+<!-- Brass socket -->
+<rect x="-5.5" y="-2" width="11" height="7" rx="2" fill="#64748b" stroke="#334155" stroke-width="1"/>
+<!-- Pendant / Bulb handle -->
+<path class="lamp-bulb-body lamp-bulb-glow" d="M -5 5 C -10 10 -11 19 -7 25 C -4 29 4 29 7 25 C 11 19 10 10 5 5 Z" stroke-width="1.4"/>
+<!-- Filament / specular highlight -->
+<path d="M -3 11 C -4.5 14 -4.5 18 -2.5 21" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.6" stroke-linecap="round"/>
+<!-- Generous invisible hit area for effortless drag/tap -->
+<circle id="lampCordHit" cx="0" cy="12" r="24" fill="transparent"/>
+</g>
+</svg>
+<div id="lampCordHint" class="px-2 py-1 rounded-lg bg-slate-900/90 dark:bg-slate-800/95 text-white text-[10px] font-bold shadow-lg border border-white/10">משוך למצב חשוך 🌙</div>
 </div>
 </header>
 <main class="max-w-7xl mx-auto px-3 sm:px-4 py-3 sm:py-6 pb-24 sm:pb-8 flex-1 w-full space-y-4 sm:space-y-6">
@@ -665,7 +724,7 @@ main{overflow-x:hidden !important;padding-left:0.5rem !important;padding-right:0
 <span class="truncate">תבניות</span>
 </button>
 </nav>
-<script src="./app.js?v=3.2.1" defer></script>
+<script src="./app.js?v=3.2.2" defer></script>
 
 <div id="birthdayCelebrationModal" class="fixed inset-0 z-[9990] bg-slate-950/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto" onclick="closeBirthdayCelebrationModal()">
 <canvas id="birthdayFxCanvas" class="fixed inset-0 w-full h-full pointer-events-none z-[9991]"></canvas>
